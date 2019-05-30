@@ -1,0 +1,23 @@
+.show-on-success.popup-main
+    .popup-body
+        +popupHeader("Call for you")
+        .popup__block
+            .popup-success
+                .popup-success__block.popup-success__info
+                    span.popup-success__text Your application number
+                    span.popup-success__number.bold 1234
+                p.popup-success__description The manager calls to the specified phone <b> within 3 </b> business hours
+        .popup__block
+            .popup-success
+                .popup-success__block
+                    p.popup__subtitle Not willing to wait?
+                .popup-success__block
+                    +contactsListIcons("popup-success__row")
+//                    .popup-success__row.contacts-list
+//                        +popupIcon("phone", "Call", "tel:+1234567890", "+1234567890")
+//                            a(href="").link-underline Dial by QR code
+//                        
+//                        +popupIcon("mail", "Email", "mailto:question@mail.com", "question@mail.com")
+
+
+            

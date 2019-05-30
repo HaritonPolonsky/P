@@ -1,0 +1,43 @@
+include ../../modules/small-blocks/breadcrumbs
+section.s-subcategory.catalog
+    .container
+        +sectionHeader("Subcaategory name", 1234)
+        .catalog-wrap
+            aside.catalog__aside
+                .catalog__aside-mobile--wrap.tabs-wrap--mobile
+                    +tabsItems("catalog-mobile-nav", "", ["Subcategory", "tab-category", "tabs--aside", ""], ["Filter", "tab-filter", "tabs--aside", ""], ["Popular searching", "tab-searching", "tabs--aside", ""])
+                    //ul.catalog-mobile-nav.tabs-list
+                        li.tabs-list__item.catalog-mobile-nav__item.tabs--aside(show-tab="tab-category")
+                            span.catalog-mobile-nav__text Subcategory
+                        li.tabs-list__item.catalog-mobile-nav__item.tabs--aside(show-tab="tab-filter")
+                            span.catalog-mobile-nav__text Filter
+                        li.tabs-list__item.catalog-mobile-nav__item.tabs--aside(show-tab="tab-searching")
+                            span.catalog-mobile-nav__text Popular searching
+                    .tabs-content
+                        .tab.tab-category
+                            +prevCategory("list", 1, "", "", "")
+                        .tab.tab-filter 
+                            include ../../modules/catalog/filter
+                        .tab.tab-searching
+                            +prevCategory("list", 1, "", "", "")
+                .catalog__aside--wrap
+                    +prevCategory("list", 1, "", "Suplements", 99)
+                    include ../../modules/catalog/filter
+            main.catalog__main.main-width--max
+                +tags("", "", "popular searching", "All searching")
+                
+                .sort-block
+                    include ../../modules/catalog/sort
+                .catalog__products-prev
+                    each n in [1, 2, 3, 4, 5, 6]
+                        +prev(n, "quantity")
+                include ../../modules/small-blocks/pagination
+                
+                section.s-popular-searching
+                    .container--inside
+                        +sectionHeaderSmall("Popular searching in this category", 1234, "", "")
+                        .popular-searching
+                            +prevCategory("list", 1, "", "Supplements", 12)
+                            +prevCategory("list", 1, "", "Supplements", 12)
+                            +prevCategory("list", 1, "", "Supplements", 12)
+                

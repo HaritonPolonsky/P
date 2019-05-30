@@ -1,0 +1,67 @@
+//.popup.mfp-hide#popup-consultation
++popupId("popup-consultation")
+    .hide-on-success.popup-main
+        .popup-body
+            +popupHeader("Get consultation")
+            .popup__block
+                form.form
+                    .form__body
+                        +formLine("phone")
+                            +inputWrap("Telephone", " form-group--width-m form-group--require", "", "", "")
+                                +inputF("+791234567890", "tel", "phone", "")
+                        +formLine("comment")
+                            +inputWrap("Comment", "", "", "", "")
+                                +textArea("Hello ", "text", "", "")
+                        
+                        +formLine("file")
+                            +uploadFile()
+                    +formFooter("Get the consultation", " form-group--width-m", "form-line__text--color-green", "privat", "Will reply within 12 hours")
+                    
+    //include success
+    .show-on-success.popup-main
+        .popup-body
+            +popupHeader("Call for you")
+            .popup__block
+                .popup-success
+                    .popup-success__block.popup-success__info
+                        span.popup-success__text Your application number
+                        span.popup-success__number.bold 1234
+                    p.popup-success__description The manager calls to the specified phone <b> within 3 </b> business hours
+            .popup__block
+                .popup-success
+                    .popup-success__block
+                        p.popup__subtitle Not willing to wait?
+                    .popup-success__block
+                        +contactsListIcons("popup-success__row")
+                        //.popup-success__row
+                            //+popupIcon("phone", "Call", "tel:+1234567890", "+1234567890")
+                                //a(href="").link-underline Dial by QR code
+                            //+popupIcon("mail", "Email", "mailto:question@mail.com", "question@mail.com")
+            .popup__block.popup__block--light
+                .popup-success
+                    form.form
+                        .form__body
+                            .fast-scale-form
+                                span.popup__subtitle How quickly did you find the product you need?
+                                .scale-line__wrap
+                                    .scale-line
+                                    .scale-line__inner
+                                        .scale-line__item.scale-line__item--descr-left.scale-item--active(data-fast-scale="1")
+                                            span.scale-line__number 1
+                                        .scale-line__item.scale-line__item--descr-left(data-fast-scale="2")
+                                            span.scale-line__number 2
+                                        .scale-line__item.scale-line__item--descr-center(data-fast-scale="3")
+                                            span.scale-line__number 3
+                                        .scale-line__item.scale-line__item--descr-right(data-fast-scale="4")
+                                            span.scale-line__number 4 
+                                        .scale-line__item.scale-line__item--descr-right(data-fast-scale="5")
+                                            span.scale-line__number 5
+                            .form-footer
+                                +formLine("scale ")
+                                    .form-group.form-group--width-l
+                                        +textArea("Comment no required ", "commet", "", " textarea-field--height-s")
+                                    +inputBut(" form-group--width-s", "Send", " btn--size-l btn--fill")
+
+                                            
+
+                                            

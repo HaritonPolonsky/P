@@ -1,0 +1,29 @@
+.catalog__products-prev
+    each n in [1, 2, 3, 4, 5]
+        .item-prev.product-prev
+            a(href="").item-prev__header
+                img(src="static/images/content/products/prev-"+n+".jpg" alt="product").pre-img.product-prev__img
+            .product-prev__body
+                +title("product-prev","Solgar, Ubiquinol (Reduced CoQ10), 100 mg, 50 Softgels", "1234")
+                ul.product-prev__info--list
+                    li.product-prev__price.price
+                        +priceSale("", "", 60) 
+                    li.text-descr Ordered 2 May 2018
+
+                button.btn.btn--fill
+                    +icon('shopping-cart', 'btn__icon')
+                    span Add to cart
+    .item-prev.product-prev
+        a(href="").item-prev__header
+            img(src="static/images/content/products/prev-"+n+".jpg" alt="product").pre-img.product-prev__img
+        .product-prev__body
+            +title("product-prev","Solgar, Ubiquinol (Reduced CoQ10), 100 mg, 50 Softgels", "1234")
+            ul.product-prev__info--list
+                li.product-prev__price.price
+                    +priceSale("", "", 60) 
+                li.text-descr Ordered 2 May 2018
+
+            button.btn.btn--fill.btn--bg-transparent--green
+                +icon('shopping-cart', 'btn__icon')
+                span In the cart    
+include ../../modules/small-blocks/pagination

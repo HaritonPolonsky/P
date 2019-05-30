@@ -1,0 +1,9 @@
+mixin ratingGraph(index, width, linkText, link)
+    .rating-graph-row
+        .stars
+            .star.star--full
+            .star-number=index
+        .rating-graph
+            .graph(style="width: "+width)
+        .rating-reviews-count.rating-reviews__link
+            a(href=link).link.link-green=linkText

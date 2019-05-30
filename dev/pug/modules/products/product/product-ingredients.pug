@@ -1,0 +1,40 @@
+section.s-product-ingredients.s-bg-white
+  .container
+    +sectionHeaderSubtitle("Product details", "")
+    .product-ingredients
+        div(class="product-ingredients"+"-table table")
+                +tableHeader("product-ingredients", "table-block--white")
+                    +tableRowColumn("product-ingredients", "header", "Name", "Ingredient", "Count")
+                .table__body.table-block--white
+                    .screen.table__product-ingredients
+                        each v in [["chicory", "seed", 345], ["capser bush", "root", 345], ["chicory", "seed", 345], ["caper bush", "root", 345], ["yarrow", "aerial parts", 345], ["black nightshade", "whole plant", 345], ["arjuna", "bark", 345], ["Cassia occidentalis","seed", 345], ["yarrow", "aerial parts", 345], ["tamarisk", "whole plant", 345], ["black nightshade", "whole plant", 345], ["Cassia occidentalis", "seed", 345], ["tamarisk","whole plan", 345]]
+                            +tableRowColumn("product-ingredients", "body", v[0], v[1], v[2])
+                    .phone
+                        .table__product-ingredients
+                            each v in [["chicory", "seed", 345], ["capser bush", "root", 345], ["chicory", "seed", 345], ["caper bush", "root", 345], ["yarrow", "aerial parts", 345], ["black nightshade", "whole plant", 345], ["arjuna", "bark", 345], ["Cassia occidentalis","seed", 345], ["yarrow", "aerial parts", 345], ["tamarisk", "whole plant", 345], ["black nightshade", "whole plant", 345], ["Cassia occidentalis", "seed", 345], ["tamarisk","whole plan", 345]]
+                                +tabletTableRowColumn("product-ingredients", "body", v[0], v[1], v[2])
+
+//                                div(class="product-ingredients-table__column table__column")
+//                                    each v, index in text
+//                                        case index
+//                                            when 1
+//                                              span.table__cell--title="Ingredient"
+//                                            when 2
+//                                                span.table__cell--title="Count"
+//                                        
+//                                        span.table__cell--label.label=v
+
+ 
+                        
+
+//                            .item-prev.table
+//                                .table-prev__body
+//                                    +title("product-ingredients", v[0], "")
+//                                   
+//                                    ul.table-prev__info--list.product-ingredients__info--list.product-ingredients__info--column
+//                                        li.table-prev__cell.product-ingredients__info
+//                                            //span(class="product-prev__info-label") Count
+//                                            span.product-ingredients__info-value=v[1]
+//                                        li.table-prev__cell.product-ingredients__info
+//                                            span.product-ingredients__info-value=v[2]
+                                         

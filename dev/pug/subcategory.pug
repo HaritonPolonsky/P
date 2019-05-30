@@ -1,0 +1,10 @@
+extends template/main
+
+block variables
+    - var title = 'Subcategory'
+    - var pageClass = 'subcategory'
+
+block content
+    include pages/subcategories/subcategory
+    include modules/products/viewed-products
+    include modules/small-blocks/questions

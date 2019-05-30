@@ -1,0 +1,22 @@
+mixin askYourQuestion(iconName, text, link)
+    +listCountLinkInnerClass(link,"","ask-question","","ask-question__link social_networks__link")
+        +icon(iconName,"ask-question__icon social_networks__icon")
+        span.ask-question__text=text
+
+
+section.s-questions
+    .container
+        .questions
+            .improve 
+                +linkText("link link-underline popup-link link-big", "#popup-improve", "")
+                    .improve__icon-wrap
+                        +icon('question', 'improve__icon')
+                    span What can be improved on this page?
+                
+                //a(href="#popup-improve").link.link-underline.popup-link
+            .ask-question
+                span.ask-question__title Ask a question
+                ul.ask-question__list
+                    +askYourQuestion("messenger", "Messenger", "")
+                    +askYourQuestion("telegram", "Telegram", "")
+                    +askYourQuestion("facebook", "Facebook", "")       

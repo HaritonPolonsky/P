@@ -1,0 +1,44 @@
+.search.header-main__search
+    .search__icon-mobile
+        +icon('search')
+    .search__form.search__form--header
+        .search__arrow
+        .search__line
+            input(placeholder="Search product" type="search").input-field.input-field--size-s.search__input.search__input-js
+            button(type="submit").search__btn.btn--bg-transparent__icon.btn
+                +icon('search', 'search__icon')
+        .search__results
+            a(href="").search-item
+                span.search__title Catalog
+                .search-item__body
+                    span.search-item__name Product
+                    span.search-item__count 123 result
+            a(href="").search-item
+                span.search__title Catalog
+                .search-item__body
+                    span.search-item__name Product
+                    span.search-item__count 123 result
+            a(href="").search-item
+                span.search__title Catalog
+                .search-item__body
+                    span.search-item__name Product
+                    span.search-item__count 123 result
+            .search-goods
+                span.search__title Products
+                ul.search-goods__list
+                    each val in [1,2,3,4]
+                        li.search-good
+                            a(href="").search-good__link
+                                .search-good__img-wrap
+                                    img(src="static/images/content/products/prev-4.jpg" alt="product").search-good__img
+                                .search-good__body
+                                    .search-good__line
+                                        span.search-good__name Product
+                                        span.search-good__descr product product
+                                    .search-good__line
+                                        span.search-good__price 123
+            .search-all
+               span.search-all__text All products
+               span.search-all__count 123
+               
+                                        

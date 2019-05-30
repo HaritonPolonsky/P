@@ -1,0 +1,13 @@
+include ../../modules/small-blocks/breadcrumbs
+section.s-404
+    .container
+        .status-page
+            span.status-page__number 404
+            h1.title-section Not found
+            p.status-page__text.subtite-size--s this page not found this page not found this page not found this page not found this page not found
+            .search__form.search__form--m
+                .search__arrow
+                .search__line
+                    input(placeholder="Search product" type="search").input-field.input-field--size-s.search__input
+                    button(type="submit").search__btn.btn.btn--bg-transparent__icon
+                        +icon('search', 'search__icon')

@@ -1,0 +1,10 @@
+section.s-product-nav.s-bg-white.s-wrap.s-border
+    .container
+        .product-nav
+            ul.product-nav__list
+                each v in [["product overview", "#s-product-descr"], ["details", "#s-product-details"], ["Questions and Answers", "#s-product-questions", 146]]
+                    li.product-nav__item
+                        a(href=v[1]).link.link-green.product-nav__link.scroll-link
+                            span.product-nav__text=v[0]
+                            if(v[2])
+                                +countText(123, "")

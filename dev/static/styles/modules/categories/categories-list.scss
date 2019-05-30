@@ -1,0 +1,12 @@
+    .s-categories-list {
+         .categories-list {
+        @media screen and (max-width: $phone-size) {
+            display: none;
+        }
+        }
+        .categories-mobile-nav {
+        @media screen and (max-width: $phone-size) {
+            display: block;
+        }
+        }
+    }

@@ -1,0 +1,13 @@
+extends template/main
+
+block variables
+    - var title = 'Categories list'
+    - var pageClass = 'categories-list-page'
+
+block content
+    //include modules/navigation/categories-mobile-nav
+    include pages/categories/categories
+    
+    include modules/small-blocks/bestsellers-type
+    include modules/products/viewed-products
+    include modules/small-blocks/questions

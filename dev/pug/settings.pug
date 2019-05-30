@@ -1,0 +1,11 @@
+extends template/main
+
+block variables
+    - var title = 'Settings'
+    - var pageClass = 'settings-page'
+    - var navPage = 'Settings'
+
+block content
+    include pages/settings/settings
+    include modules/products/viewed-products
+    include modules/small-blocks/questions

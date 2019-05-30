@@ -1,0 +1,60 @@
+section.s-wrap.s-bg-white
+    include ../../modules/small-blocks/breadcrumbs
+section.s-product.s-bg-white
+    .container.product-container
+        +sectionHeader("Solgar, Ubiquinol (Reduced CoQ10), 100 mg, 50 Softgels", "", " product-header ")
+            .product-rating
+                .stars
+                    .star.star--full
+                    .star.star--full
+                    .star.star--full
+                    .star
+                        .star--half
+                    .star
+            .product-reviews__link
+                a(href="").link.link-green.link-underline 25 Reviews
+        include ../../modules/products/product/product-options
+
+        .product-body
+            include ../../modules/products/product/product-slider
+            .product-info
+                .product-details-header
+                    .product-item
+                        span.product-item__title Price
+                        each p in [[1, 1], [2, 2], [3,3]]
+                            .product-info-price.price-catalog
+                                span.price-catalog__number=p[0]+"$"
+                                span.price-catalog__count=p[1]
+                    .product-item
+                        span.product-item__title Rating
+                        .product-item__rating.rating-line
+                            span.rating-line__number 5
+                            span.rating-line__text in 
+                            a(href="").link.link-green.link-underline Grocery
+                        
+                .product-block__small.product-block__small--bold
+                    .product-block__small--line
+                        span.title-block Order
+                        +quantity()
+                    .product-block__small--line
+                        .price
+                            span.title-block Price
+                            span.price__current 70$
+                    
+                        button.btn.btn--fill
+                            +icon('shopping-cart', 'btn__icon')
+                            span Add to cart
+        
+include ../../modules/navigation/product-nav
+include ../../modules/products/product/product-descr
+include ../../modules/products/product/product-details
+include ../../modules/products/product/product-ingredients
+include ../../modules/products/product/product-questions
+include ../../modules/products/product/product-reviews
+
+                
+                    
+                    
+                    
+                
+                

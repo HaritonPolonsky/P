@@ -1,0 +1,10 @@
+extends template/main
+
+block variables
+    - var title = 'Site map'
+    - var pageClass = 'site-map'
+
+block content
+    include pages/site-map/site-map
+    include modules/products/viewed-products
+    include modules/small-blocks/questions

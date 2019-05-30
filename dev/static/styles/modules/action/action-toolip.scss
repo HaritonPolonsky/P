@@ -1,0 +1,31 @@
+.action-tooltip {
+    position: absolute;
+    background-color: $white;
+    padding: 10px 10px 10px 30px;
+    border-radius: 4px;
+    left: 0;
+    top: calc(100% + 7px);
+    right: 0;
+    @media screen and (max-width: $phone-size) {
+        top: 25px;
+    }
+    &:before {
+        @include triangleTop(15px, -5px, 5px, #ffffff);
+        
+    }
+
+    &__icon {
+        fill: $link-color;
+        @include size(16px);
+        position: absolute;
+        top: 15px;
+        left: 8px;
+    }
+
+    &__text { 
+        font-size: 12px;
+        color: $base-text;
+
+    }
+}
+

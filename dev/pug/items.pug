@@ -1,0 +1,11 @@
+extends template/main
+
+block variables
+    - var title = 'Items'
+    - var pageClass = 'items-page'
+    - var navPage = 'Orders'
+
+block content
+    include pages/items/items
+    include modules/products/viewed-products
+    include modules/small-blocks/questions

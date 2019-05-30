@@ -1,0 +1,14 @@
+include ../../modules/small-blocks/breadcrumbs
+section.s-search-results.catalog
+    .container
+        .search__form.search__form--m
+            .search__line
+                input(placeholder="Search product" type="search").input-field.input-field--size-s.search__input
+                button(type="submit").search__btn.btn.btn--bg-transparent__icon
+                    +icon('search', 'search__icon')
+        //+sectionHeaderSpan("Search Results for ", "textSectionGreen", "product name", 1234)
+        .section-header.section-header--search
+            h2.title-section Search Results for
+            span.textSectionGreen "producst name"  
+                +countText(0, " section-header--count")
+        

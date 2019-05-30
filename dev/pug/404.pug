@@ -1,0 +1,10 @@
+extends template/main
+
+block variables
+    - var title = 'Not found'
+    - var pageClass = '404'
+
+block content
+    include pages/404/404
+    include modules/products/viewed-products
+    include modules/small-blocks/questions

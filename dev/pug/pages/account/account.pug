@@ -1,0 +1,72 @@
+include ../../modules/small-blocks/breadcrumbs
+section.s-account.catalog
+    .container
+        +sectionHeader("Accountd ")
+        .catalog-wrap
+            include ../../modules/asside/account-asside
+                        
+            main.main-width--max.section.section-bg--white
+                form.form
+                    .form__body.form__body--blocks
+                        .form-line__block.form-line__block--big
+                            span.form-line__block--title Section1
+                            +formLine("name")
+                                +inputWrap("Name", " form-group--require", "", "", "")
+                                    +inputF("Name", "text", "name", "")
+
+
+                            +formLine("fName")
+                                +inputWrap("FName", " form-group--require", "", "", "")
+                                    +inputF("FName", "text", "Fname", "")
+
+
+                            +formLine("mail")
+                                +inputWrap("Email", " form-group--require", "", "", "")
+                                    +inputF("Email", "email", "mail", "")
+
+                            +formLine("phone")
+                                +inputWrap("Telephone", "  form-group--require", "", "", "")
+                                    +inputF("+791234567890", "tel", "phone", "")
+
+                        .form-line__block.form-line__block--big
+                            span.form-line__block--title Section2
+                            +formLine("select")
+                                +inputWrap("Select pay", "  form-group--select select ", "", "", "")
+
+                                    .select__wrap
+                                        .select-header
+                                            +inputF("", "text", "select", " select-input", "Pay")
+                                        .select__body
+
+                                            ul.dropdown.select__list.input-select__list
+                                                each val in ['region1','region2','region3','region4','region5','region6','region7', 'region8', 'region9','region10','region11','region12','region13']
+                                                    li(class="select-item")
+                                                        span.select__text= val
+                                                        +countText(4433, "")
+                            +formLine("select")
+                                +inputWrap("Select pay", "  form-group--select select ", "", "", "")                            
+                                    .select__wrap
+                                        .select-header
+                                            +inputF("", "text", "select", " select-input", "Pay")
+                                        .select__body
+
+                                            ul.dropdown.select__list.input-select__list
+                                                each val in ['region1','region2','region3','region4','region5','region6','region7', 'region8', 'region9','region10','region11','region12','region13']
+                                                    li(class="select-item")
+                                                        span.select__text= val
+                                                        +countText(4433, "")
+
+                            +formFooter("Save", " form-group--width-p", "", "", "")
+                                    //.select-header
+                                        +inputF("", "text", "select", "", "Pay")
+                                    //.select__body
+                                        ul.select__list
+                                            li.select__item
+                                                span.select__text pay1
+                                                +countText(4433, "")
+                                            li.select__item
+                                                span.select__text pay2    
+                                            li.select__item
+                                                span.select__text pay3
+                                            li.select__item
+                                                span.select__text pay4

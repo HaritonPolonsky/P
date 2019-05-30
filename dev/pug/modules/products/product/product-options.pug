@@ -1,0 +1,45 @@
+.phone.product-options-mobile
+    .show All parameters
+.product-options
+    .product-options__item.product-options__item--width-l
+        +formLine("select")
+            +inputWrap("Select one", "  form-group--select select ", "", "", "")                            
+                .select__wrap
+                    .select-header
+                        +inputF("", "text", "select", " select-input", "Solgar, Ubiquinol dfsdfsasd (Reduced CoQ10), 100 mg, 50 Softgels")
+                    .select__body
+
+                        ul.dropdown.select__list.input-select__list
+                            each val in ['Solgar, Ubiquinol (Reduced CoQ10), 1004 mg, 50 Softgels1','Solgar, Ubiquinol (Reduced CoQ10), 100 mg, 50 Softgels2','Solgar, Ubiquinol (Reduced CoQ10), 100 mg, 50 Softgels3','Solgar, Ubiquinol (Reduced CoQ10), 100 mg, 50 Softgels4','select5','select6','select7', 'select8', 'select9','select10','select11','select12','select13']
+                                li(class="select-item")
+                                    span.select__text= val
+                                    +countText(4433, "")
+
+    .product-options__item.product-options__item--width-s
+        +formLine("select")
+            +inputWrap("Select 2", "  form-group--select select ", "", "", "")                            
+                .select__wrap
+                    .select-header
+                        +inputF("", "text", "select", " select-input", "Pay")
+                    .select__body
+
+                        ul.dropdown.select__list.input-select__list
+                            each val in ['region1','region2','region3','region4','region5','region6','region7', 'region8', 'region9','region10','region11','region12','region13']
+                                li(class="select-item")
+                                    span.select__text= val
+                                    +countText(4433, "")
+
+    .product-options__item.product-options__item--width-fill
+        .product-type__list
+            each value in [['pink', 124, 124], ['red', 124, 124], ['green', 124, 124], ['orange', 124, 124], ['white', 124, 124]]
+                .product-type.color-type.product-type__block
+                    .product-type__prev(style='background-color: '+value[0])
+                    //span.product-type__code.color-title=value[1]
+                    //span.product-type__price.color-value=value[2]
+                    //.product-type__prev.color--m.color(style='background-color: '+value[0])
+                    .color-type__descr.product-type__descr
+                        span.product-type__code.color-title=value[1]
+                        span.product-type__price.color-value=value[2]
+            .product-type.color-type.product-type__block--link
+                a(href="#popup-colors-catalog").popup-link.link.link-green.link-underline.show-item--link All colors
+                +countText("123","")

@@ -1,0 +1,12 @@
+include ../../modules/small-blocks/breadcrumbs
+section.s-sitemap
+    .container
+        +sectionHeader("Site map", "")
+        .site-map-wrap        
+            each i in [1, 2]
+                +itemHeaderTitleBody("site-map__block", "Category name", "", "site-map__block")
+                    each s in [1, 2, 3, 4, 5, 6]
+                        +divSpan("site-map-item", "site-map-item__title subtite-size--s", "Subcategory")
+                            ul.site-map-list
+                                each c in [1, 2, 3, 4, 5, 6, 7]
+                                    +listCountLinkInnerClass("", "Solgar, Ubiquinol (Reduced CoQ10), 100 mg, 50 Softgels", "site-map-list", "", "site-map-list__link link-green-light")

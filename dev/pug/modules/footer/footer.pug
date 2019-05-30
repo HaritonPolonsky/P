@@ -1,0 +1,63 @@
+footer.footer
+    .footer-top
+        .container
+            .footer-callback
+                img(src="static/images/general/qr-code.png" alt="qr code").footer-callback__img.footer-img
+                .order-callback.footer-callback__order-callback
+                    span.order-callback__description Call 24/6 
+                    a(href="tel:+77777777777").order-callback__phone +7 777 777-77-77
+                    a(href="").order-callback__link.link-white.link-underline Call
+            .footer-main
+                .footer-nav
+                    .footer__col
+                        span.footer__title  About as
+                        ul.footer-nav__list
+                            +listLinkSpan("footer", "", "Payment and delivery", "")
+                            +listLinkSpan("footer", "", "Warranty", "")
+                            +listLinkSpan("footer", "", "Services", "")
+                            +listLinkSpan("footer", "", "Company", "")
+                            +listLinkSpan("footer", "", "Contacts", "")
+                    .footer__col
+                        span.footer__title Catalog
+                        ul.footer-nav__list
+                            +listLinkSpan("footer", "", "Supplements ", "")
+                            +listLinkSpan("footer", "", "Herbs & Homeopathy", "")
+                            +listLinkSpan("footer", "", "Personal Care  and Beauty", "")
+                            +listLinkSpan("footer", "", "Sports", "")
+                            +listLinkSpan("footer", "", "Baby and Kids", "See")
+                .footer__col
+                    .footer-block
+                        span.footer__title Accepted Payment Methods
+                        .payment-types
+                            ul.payment-types__list
+                                +listImg("payment-types__item", "visa","payment-types__logo")
+                                +listImg("payment-types__item", "american-express","payment-types__logo")
+                                +listImg("payment-types__item", "paypal", "payment-types__logo")
+                            a(href="").link-underline.link-yellow Order payment
+                    .footer-block
+                        .footer-action
+                            span.footer-action__title Special and Clearance Items
+                            .action-tooltip
+                                +icon('present', 'action-tooltip__icon')
+                                span.action-tooltip__text Present
+                .footer__col
+                    +divSpan("footer-block", "footer__title", "Contacts")
+                        +footerLocationBlock("footer-contacts", "Office", "1535 SE 17th Street, Suite 107 Fort Lauderdale, FL 33316", "location")
+                            .contacts-popup
+                                span.contacts-popup__toggle On map
+                                include ../popups/contacts-popup                
+                    .footer-block
+                        +footerLocationBlock("footer-contacts", "Office", "1535 SE 17th Street, Suite 107 Fort Lauderdale, FL 33316", "location")
+                            .contacts-popup
+                                span.contacts-popup__toggle On mapw
+                                include ../popups/contacts-popup     
+                
+    .footer-bottom
+        .container
+            .footer-bottom__line 
+                span.copyright Copyright 1997-2019
+                a(href="").footer-bottom__link Privacy Policy
+                a(href="").footer-bottom__link Site map
+            .footer-bottom__line 
+                p.footer-bottom__text iHerb Inc. All rights reserved. iHerb® is a registered trademark of iHerb, Inc. Trusted Brands. Healthy Rewards. and the iHerb.com Trusted Brands.  Healthy Rewards. and the iHerb.com Trusted Brands. Healthy Rewards. Logo are trademarks of iHerb, Inc.
+                p.footer-bottom__text *Disclaimer: Statements made, or products sold through this website, have not been evaluated by the United States Food and Drug Administration. They are not intended to diagnose, treat, cure or prevent any disease

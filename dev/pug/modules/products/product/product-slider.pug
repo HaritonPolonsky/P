@@ -1,0 +1,15 @@
+.product-slider
+    .product-slider-aside
+        .product-slider-aside__nav.product-slider-aside__nav--prev
+        .js-product-slider-aside
+            -var n = 1;
+            while n < 15
+                .product-slider-aside__item
+                    img(src="static/images/content/products/1/"+n+++".jpg" alt="product")
+        .product-slider-aside__nav.product-slider-aside__nav--next
+    .product-slider-main
+        .js-product-slider-main
+            -var n = 1;
+            while n < 15
+                .product-slider-main__item
+                    img(src="static/images/content/products/1/"+n+++".jpg" alt="product")

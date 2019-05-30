@@ -1,0 +1,19 @@
+section.s-product-slider.s-bg-white
+    .container
+        .slider
+            +sectionHeader("Recently Viewed Prosducts", "")
+                .section-header__right
+                    span.slider__count
+            .slider__body.products-prev-slider
+                .slider__navigation.products-prev__navigation
+                    +sliderNavNavigation("slider__nav", "")
+                include ../../modules/products/product/prev/prev2
+//            .slider-navigation
+//                .slider__nav.slider__nav--next.products-prev-slider__nav--next
+//                    +icon('left', 'slider__nav__icon')
+//                .slider__nav.slider__nav--prev.products-prev-slider__nav--prev
+//                    +icon('right', 'slider__nav__icon')
+            //.js-products-slider
+            include ../../modules/product/prev2
+                
+            

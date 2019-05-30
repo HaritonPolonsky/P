@@ -1,0 +1,84 @@
+.btn {
+    display: flex;
+    align-items: center;
+    //align-items: baseline;
+    background-color: $main-action-color;
+    cursor: pointer;
+    border: $main-border transparent;
+    @extend %mainBorderRadius;
+    padding: 8px 20px;//18
+    white-space: nowrap;
+    font-family: $medium-font;
+    line-height: 20px;
+    @media screen and (max-width: $tablet-size) {
+        padding: 8px 10px;
+    }
+    @media screen and (max-width: $phone-size) {
+/*        overflow: hidden;
+        text-overflow: ellipsis;*/
+        white-space: normal;
+    }
+    &:hover {
+        background-color: $btn-hover-bg;
+    }
+    & > * {
+        &:not(:last-child) {
+            margin-right: 5px;
+        }
+    }
+    
+    &__icon {
+        @include size(20px);
+    }
+    &.btn {
+        &--fill {
+            width: 100%;
+            justify-content: center;
+        }
+        &--disabled {
+            opacity: .5;
+        }
+        &--bg {
+            &-transparent{
+                &__icon {
+                   background-color: transparent; 
+                   border: 0;
+                   
+                }
+                &--green {
+                   background-color: transparent;
+                   color: $btn-green; 
+                   fill: $btn-green;
+                   border: 1px solid  $btn-green;
+                } 
+            }
+            &-green {
+                background-color: $btn-green;
+                color: $white;
+            }
+        }
+        
+        &--border {
+            &-green {
+                background-color: $white;
+                border-color: $btn-green;
+                color: $btn-green;
+            }
+        }
+    }
+    &--size {
+        &-s {
+            //height: 20px;
+            padding: 3px 15px;
+        }
+        &-l {
+            //height: 20px;
+            padding: 13px 30px;
+            
+            //width: 153px;
+        }
+    }
+    .scale-btn {
+        flex: 0 0 150px;
+    }
+}

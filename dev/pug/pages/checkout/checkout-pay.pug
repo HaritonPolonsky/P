@@ -1,0 +1,40 @@
+.section.section-bg--white
+    .payment-types
+        span.title-block  Accepted Payment Methods
+        ul.payment-types__list
+            +listImg("payment-types__item", "visa","icon-fill--black payment-types__logo ")
+            +listImg("payment-types__item", "american-express","icon-fill--black payment-types__logo")
+            +listImg("payment-types__item", "paypal", "icon-fill--black payment-types__logo")
+    form.form
+        .form__body.form__body--blocks
+            .form-line__block.form-line__block--big
+                //span.form-line__block--title Pay
+                +formLine("name")
+                    +inputWrap("Name", " form-group--require", "", "", "")
+                        +inputF("Name", "text", "name", "")
+
+
+                +formLine("fName")
+                    +inputWrap("FName", " form-group--require", "", "", "")
+                        +inputF("FName", "text", "Fname", "")
+
+
+                +formLine("cart")
+                    +inputWrap("Cart number", " form-group--require", "", "", "")
+                        +inputF("Cart number", "number", "cart number", "")
+
+                +formLine("code")
+                    +inputWrap("Code", "  form-group--require", "", "", "")
+                        +inputF("Code", "number", "code", "")
+                        
+                +formLine("Date")
+                    +inputWrap("Date", "  form-group--require", "", "", "")
+                        +inputF("Date", "date", "date", "")
+
+            .form-line__block.form-line__block--big
+                span.form-line__block--title Address
+                +formLine("address")
+                    +inputWrap("Address", " form-group--require", "", "", "")
+                        +inputF("Address", "text", "Address", "")
+
+                +formFooter("Checkout", " form-group--width-p checkout", "", "", "")

@@ -1,0 +1,17 @@
+mixin img(className, number)
+    div(class=className+"__img")(style="background-image:url('static/images/content/categories/category-prev-"+number+".jpg')")
+
+mixin imgHeader(className, number, folderName, fileName)
+    div(class=className+"__header")(style="background-image:url('static/images/content/"+folderName+"/prev-"+number+".jpg')")
+        if block
+        block
+
+mixin linkText(link, className,color, linkText, line)
+    - var lT=className+"__link"+color+line
+    a(href=link)(class=lT)=linkTex
+    
+mixin listImg(listClass, img, imgClass)
+    li(class=listClass)
+        +icon(img, imgClass)
+        //img(src="static/images/general/visa.svg")(class=imgClass)
+         

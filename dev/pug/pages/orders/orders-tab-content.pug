@@ -1,0 +1,26 @@
+main.main-width--max.section-bg--white.section-main
+    .catalog__orders-prev
+        each n in [1, 2, 3, 4, 5, 6]
+            .item-prev
+                .item-prev__header
+                    a(href="https://www.ynet.co.il/home/0,7340,L-8,00.html").item-prev__header--wrap
+                        .item-prev__header--col
+                            span.item-prev__title--big Order: 4356
+                            span.item-prev__descr September 12 2018
+                        span.status.status--waiting Status order
+                .product-prev__body.item-prev__body
+                    ul.product-prev__info--list.item-prev__body--list
+                        +list2span("product-prev__info","Count", "8298")
+                        +list2span("product-prev__info","Delivery", "21-23 September")
+                    .item-prev__body--block
+                        ul.product-prev__info--list.item-prev__body--list    
+                            +list2span("product-prev__info","Name", "Name")
+                            +list2span("product-prev__info","Addr", "Ramat Gan Hahashmonaim 7 appartament 3")
+                        ul.product-prev__info--list.item-prev__body--list.price__list
+                            +list2span("product-prev__info","Price", "2020")
+                            +list2span("product-prev__info","Delivery price", "20")
+                            +list2span("product-prev__info","Price", "2040")
+include ../../modules/small-blocks/pagination
+                                                    
+
+                   

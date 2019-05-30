@@ -1,0 +1,176 @@
+.item-prev {
+    border: 1px solid #f2f2f2;
+    width: 100%;
+    border-radius: 4px;
+
+    
+    &__header {
+        //align-items: center;
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+        background-color: $white;
+        position: relative;
+        &--wrap {
+            padding: 20px;
+            display: flex;
+            align-items: baseline;
+            width: 100%;
+            @media screen and (max-width: $tablet-size) {
+            flex-direction: column;
+            padding-bottom: 0;
+            }
+            & > * {
+                @media screen and (max-width: $phone-size) {
+                    padding-right: 0;
+            flex-direction: column;
+            
+            }
+                &:not(:last-child) {
+                    padding-right: 10px;
+                    @media screen and (max-width: $tablet-size) {
+                    
+                    padding-bottom: 10px;
+            }
+            @media screen and (max-width: $phone-size) {
+                    padding-right: 0;
+           
+            
+            }
+                }
+            }
+        }
+        &--col {
+            display: flex;
+            align-items: baseline;
+            & > * {
+                &:not(:first-child) {
+                    padding-left: 10px;
+                    @media screen and (max-width: $phone-size) {
+                    padding-left: 0;
+          
+            
+            }
+                }
+                
+            }
+        }
+    }
+    &__title {
+        &--big {
+               font-size: 24px;
+               line-height: 1.44;
+            }
+    }
+    &__descr {
+        font-size: 14px;
+    }
+    &__body {
+        
+        &--list {
+            width: 60%;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            //justify-content: space-between;
+            
+            align-items: baseline;
+/*            @media screen and (max-width: $tablet-size) {
+                width: 100%;
+            }*/
+            &.product-prev__info--list, .item-prev__body--block {
+                @media screen and (max-width: $tablet-size) {
+                    width: 100%;
+                    flex-direction: column;
+                }
+/*                & :first-child {
+                    & > * {
+                        &:first-child {
+                            @media screen and (max-width: $phone-size) {
+                            //background-color: black;
+                            
+                        }
+                        }
+                    
+                    }
+                }*/
+                & > * {
+                    
+                    &:last-child, &:not(:last-child), &:first-child() {
+                        width: 100%;
+                        justify-content: flex-start;
+                        @media screen and (max-width: $tablet-size) {
+                    
+                    flex-direction: row;
+                    max-width: 100%;
+                    
+                }
+                @media screen and (max-width: $phone-size) {
+                            flex-direction: column;
+                            
+                        }
+/*                    @media screen and (max-width: $tablet-size) {
+                    //width: 100%;
+                    flex: 0 0 100%;
+                    max-width: 100%;
+                    justify-content: flex-start;
+                    flex-direction: row;
+                    }*/
+                    }
+                    
+            }
+            }
+            
+            .product-prev__info {
+                @media screen and (max-width: $tablet-size) {
+                    margin-right: 0;
+                }
+                & > * {
+                    @media screen and (max-width: $phone-size) {
+                        width: 100%;
+                            
+                        }
+                        &:not(:last-child) {
+                            margin-bottom: 10px;
+                        }
+                    &:first-child {
+                        width: 20%;
+                        @media screen and (max-width: $tablet-size) { 
+                            width: 30%;
+                            //width: auto;
+                        }
+                        @media screen and (max-width: $phone-size) {
+                            width: 100%;
+                            
+                        }
+                    }
+                    &:last-child {
+                        //width: 20%;
+                        @media screen and (max-width: $tablet-size) { 
+                            width: 50%;
+                        }
+                        @media screen and (max-width: $phone-size) {
+                            width: 100%;
+                            
+                        }
+                        
+                    }
+                    
+                }
+                
+                
+            }
+        }
+        &--block {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            @media screen and (max-width: $tablet-size) { 
+                width: 100%;
+                flex-direction: column;
+                
+            }
+        }
+    }
+    
+}

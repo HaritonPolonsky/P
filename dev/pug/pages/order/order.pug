@@ -1,0 +1,103 @@
+include ../../modules/small-blocks/breadcrumbs
+section.s-order
+    .container
+        +sectionHeader("Order 1234", "", "center")
+            span.status.status--success Status order success
+            
+        .order-inner
+            .subtitle-block
+                span.subtitle-size--s 2 May 2018
+                span.subtitle-size--s 9 May 2018
+            div(class="order"+"-table table")
+                +tableHeader("order", "table-block--white")
+                    +tableRowColumn("order", "header", "Name", "Count", "Price", "Total price")
+                .order-table__body.table__body.table-block--white
+
+
+                    .table__products-prev
+                        each n in [1, 2, 3, 4, 5, 6]
+                            .item-prev.table-prev
+                                a(href="").table-prev__header.order-prev__header
+                                    img(src="static/images/content/products/prev-"+n+".jpg" alt="product").pre-img.product-prev__img
+                                .table-prev__body.order-prev__body
+                                    +title("product-prev","Solgar, Ubiquinol (Reduced CoQ10), 100 mg, 50 Softgels", "")
+                                        ul.product-prev__info--list.table-prev__info--list.order-prev__info--list
+                                            +list2span("product-prev__info","Code", "829835006540")
+                                    ul.table-prev__info--list.order-prev__info--list.order-prev__info--column
+                                        li.table-prev__cell.product-prev__info
+                                            span(class="product-prev__info-label") Count
+                                            span.product-prev__info-value  123
+                                        li.table-prev__price.price
+                                            +priceSale("", 80, 60)
+                                        li.table-prev__price.price
+                                            +priceSale("", "", 80) 
+                                    .tablet
+                                        ul.table-prev__info--list.order-prev__info--list.table-prev__info--line
+                                            li.table-prev__price.price.product-prev__info 
+                                                span(class="product-prev__info-label") Price
+                                                +priceSale("", 80, 60)
+                                            li.table-prev__price.price.product-prev__info 
+                                                span(class="product-prev__info-label") Price
+                                                +priceSale("", "", 80) 
+                                            //li.table-prev__price.price.product-prev__info 
+                                                span(class="product-prev__info-label") Price
+                                                span(class="product-prev__info-value")  123
+                    .table__products-prev--footer.order-prev--footer
+                        ul.table-prev--total.order-prev--total
+                            li.table-prev__cell.table-prev__cell--empty
+                            li.table-prev__cell
+                                span.table-prev__cell--label Price
+                            li.table-prev__cell
+                                span.table-prev__cell--value 123
+                        ul.table-prev--total.order-prev--total
+                            li.table-prev__cell.table-prev__cell--empty
+                            li.table-prev__cell
+                                span.table-prev__cell--label Delivery
+                            li.table-prev__cell
+                                span.table-prev__cell--value 123
+                        ul.table-prev--total.order-prev--total
+                            li.table-prev__cell.table-prev__cell--empty
+                            li.table-prev__cell
+                                span.table-prev__cell--label.price-sale__label Sale
+                            li.table-prev__cell.price--sale
+                                span.table-prev__cell--value.price-sale__value -10$
+                           
+                        ul.table-prev--total.order-prev--total
+                            li.table-prev__cell.table-prev__cell--empty
+                            li.table-prev__cell
+                                span.table-prev__cell--label Price
+                            li.table-prev__cell.price
+                                +priceSale("", "", 80)
+                            
+                                
+                        ul.table-prev--total.order-prev--total
+                            li.table-prev__cell.table-prev__cell--empty
+                            li.table-prev__cell.table-prev__cell--descr
+                                span.table-prev__cell--label.text-descr Price as of September 7 2018
+                
+                .order-table__footer.table__footer
+                    .order-info__row
+                        .order-info__col
+                            .order-info__title Contacts
+                            .order-info__line
+                                span.order-info__text Name LastName
+                            .order-info__line
+                                span.order-info__text mail@gmail.com 
+                            .order-info__line
+                                span.order-info__text 123456708
+                        .order-info__col.order-info__col--wide
+                            .order-info__title Adress
+                            .order-info__line
+                                span.order-info__text Lod, HaRoe 74, 10 
+                            .order-info__line
+                                span.order-info__text Delivery 10 September 2018 
+
+                        .order-info__col
+                            .order-info__title Pay
+                            .order-info__line
+                                span.order-info__label payed
+                            .order-info__line
+                                span.order-info__value Visa
+                        
+                        
+                

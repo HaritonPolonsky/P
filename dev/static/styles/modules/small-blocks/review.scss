@@ -1,0 +1,71 @@
+.reviews {
+    display: flex;
+    flex-direction: column;
+    & > * {
+        &:not(:last-child) {
+            margin-bottom: 5px;
+        }
+    }
+    
+}
+
+.review {
+    //line-height: 18px;
+    display: flex;
+    border-radius: 4px;
+    flex-direction: column;
+    font-size: 14px;
+    background-color: white;
+    padding: 15px 20px;
+    
+    & > * {
+        &:not(:first-child) {
+            padding-top: 15px;
+        }
+        
+        
+    }
+    
+    &-header {
+        display: flex;
+        align-items: baseline;
+        & > * {
+            &:not(:last-child) {
+                margin-right: 15px;
+            }
+        }
+        
+    }
+    &-body {
+        display: flex;
+        flex-direction: column;
+        & > * {
+            &:not(:first-child) {
+                padding-top: 15px;
+        }
+        
+        }
+    }
+    &-gallery {
+        display: flex;
+        
+        & > * {
+            &:not(:last-child) {
+                margin-right: 10px;
+                
+            }
+        }
+        &__item {
+            margin-top: 10px;
+            
+            
+        }
+        &__img {
+            
+            border-radius: 4px;
+            overflow: hidden;
+            height: 45px;
+            width: 75px;
+        }
+    }
+}

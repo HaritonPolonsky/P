@@ -1,0 +1,10 @@
+extends template/main
+
+block variables
+    - var title = 'Cart'
+    - var pageClass = 'cart-page'
+
+block content
+    include pages/cart/cart
+    include modules/products/viewed-products
+    include modules/small-blocks/questions

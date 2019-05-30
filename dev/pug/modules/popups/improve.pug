@@ -1,0 +1,46 @@
+//.popup.mfp-hide#popup-improve
++popupId("popup-improve")
+    .hide-on-success.popup-main
+        .popup-body
+            +popupHeader("What can be improved")
+            .popup__block
+                form.form
+                    .form__body
+                        +formLine("comment")
+                            +inputWrap("Comment", " form-group--require", "", "", "")
+                                +textArea("Hello ", "commet", "", "")
+                        +formLine("mail")
+                            +inputWrap("Email", " form-group--width-m form-group--require", "", "", "")
+                                +inputF("Email", "email", "mail", "")
+                            +formLineText(" form-line__text--size-s", "We will quickly correct the error, if we can contact you to clarify information")
+                        
+                        .form-line.form-input--phone
+                            .form-group.form-group--width-m.form-group--require
+                                label.form-group__label Telephone
+                                input(placeholder="+791234567890" type="tel" name="phone").input-field.input-text
+                    +formFooter("Suggest to improve", " form-group--width-m", "form-line__text--color-green", "privat", "Will reply within 12 hours")
+
+    include success
+//    .show-on-success.popup-main
+//        .popup-body
+//            .popup__header
+//                span.popup__title Call for you
+//            .popup__block
+//                .popup-success
+//                    .popup-success__block.popup-success__info
+//                        span.popup-success__text Your application number
+//                        span.popup-success__number.bold 1234
+//                    p.popup-success__description The manager calls to the specified phone <b> within 3 </b> business hours
+//            .popup__block
+//                .popup-success
+//                    .popup-success__block
+//                        p.popup-success__label Not willing to wait?
+//                    .popup-success__block
+//                        .popup-success__row
+//                            +popupIcon("phone", "Call", "tel:+1234567890", "+1234567890")
+//                                a(href="").link-underline Dial by QR code
+//                                    
+//                            +popupIcon("mail", "Email", "mailto:question@mail.com", "question@mail.com")
+                 
+
+            

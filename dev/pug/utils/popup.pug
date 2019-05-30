@@ -1,0 +1,35 @@
+mixin popupHeader(text) 
+    .popup__header
+        span.popup__title=text
+        
+mixin popupId(idName)
+    .popup.mfp-hide(id=idName)
+        block
+        
+mixin popupClassId(className, idName)
+    div(id=idName)(class=" popup mfp-hide "+className)
+        block 
+
+mixin videoPopup(name, title, src)
+    +popupClassId("popup--big popup-video ", name)
+        .popup-body
+            +popupHeader(title)
+            .popup__block.popup__block--big
+                iframe(width="auto" height="560" src=src frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+
+mixin contactsIcon(iconName, iconText, linkName, linkText)
+    .contacts-icon-wrap
+        +icon(iconName, 'contacts-icon')
+        span.contacts-icon__text=iconText
+        a(href=linkName).link-green=linkText
+        if(block)
+            block
+
+//mixin popupIcon(iconName, iconText, linkName, linkText)
+//    .popup-success-icon-wrap
+//        +icon(iconName, 'popup-success-icon')
+//        span.popup-success-icon__text=iconText
+//        a(href=linkName).link-green=linkText
+//        if(block)
+//            block
+        

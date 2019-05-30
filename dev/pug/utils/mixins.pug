@@ -1,0 +1,279 @@
+include ../../ui-kit/ui-btn/ui-btn
+include ../../ui-kit/ui-pagination/ui-pagination
+include ../../ui-kit/ui-svg-icon/ui-svg-icon
+include ../modules/ui/ui-prev
+include form
+include nav
+include popup
+include catalog
+include small-blocks
+include actions
+include prev
+include product
+include prev-category
+
+//mixin list(link, text, className)
+//    li(class=className+"__item")
+//        a(href=link)(class=className+"__link")=text
+//   
+ 
+- var currency = "$"
+
+mixin title(className, text, count)
+    a(href="")(class=className+"__title")
+        span(class=className+"__title-text")=text
+        if(count !== "")
+            +countText(count, "")
+        if(block)
+            block
+        //span(class=className+"__count")=count
+         
+//mixin title(className, text, count)
+//    div(class=className+"__title")
+//        span(class=className+"__title-text")=text
+//        +countText(count, "")
+
+
+
+mixin listCountLink(link, text, className, count)
+    li(class=className+"__item")
+        a(href=link)(class=className+"__link")=text
+        if(count!=="")    
+            +countText(count, "")
+//        span(class=className+"__count")=count
+
+mixin listCountLinkClass(link, text, className, count, linkClass)
+    li(class=className+"__item")
+        a(href=link)(class=linkClass)=text
+        if(count!=="")    
+            +countText(count, "")
+        if block
+            block
+            
+mixin listCountLinkInnerClass(link, text, className, count, linkClass)
+    li(class=className+"__item") 
+        a(href=link)(class=linkClass)=text 
+            if block
+                block
+                
+
+mixin itemHeaderTitleBody(className, titleText, dropdownClass, bodyClass)
+    div(class=className+"-item") 
+        div(class=className+"-item__header "+dropdownClass) 
+            span(class=className+"-item__title ")=titleText     
+        div(class=bodyClass+"-item__body") 
+            if(block)
+                block
+         
+
+
+mixin list2span(className, text, val)
+    li(class=className)
+        span(class=className+"-label")=text
+        span(class=className+"-value")=val
+        if block
+            block
+ 
+mixin priceSale(className,oldPrice, currentPrice)
+    - var priceOld = "cross price__old"+className
+    - var priceCurrent = "price__current"+className
+    if(oldPrice !=="")
+        span(class=priceOld)=oldPrice+ currency  
+    span(class=priceCurrent)=currentPrice+ currency
+    
+
+
+
+mixin tableHeader(className, headerModifier)
+    
+        div(class=className+"-table__header table__header "+headerModifier)
+            if(block)
+                block
+
+mixin tableRowColumn(className, modifier, ...items)
+    if(modifier!=="")
+        - var modifier="table__row--"+modifier
+    div(class=className+"-table__row table__row "+modifier)
+        each text in items
+            div(class=className+"-table__column table__column")
+                span.table__cell--label.label=text
+                
+
+mixin tabletTableRowColumn(className, modifier, ...items)
+    if(modifier!=="")
+        - var modifier="table__row--"+modifier
+    div(class=className+"-table__row table__row "+modifier)
+        each v, index in items
+            div(class=className+"-table__column table__column")
+                if(index===1)
+                    span.table__cell--title="Ingredient"
+                if(index===2)
+                    span.table__cell--title="Count"
+                span.table__cell--label.label=v
+
+mixin countText(count, className)
+    - var cN="count-text"+className
+    if(count!=="")
+        span(class=cN)=count 
+//
+//mixin linkTexta(link, className, color, linkText, line)
+//    - var lT=className+"__link"+color+line
+//    a(href=link)(class=lT)=linkText
+    
+mixin linkText(className, linkName, linkText)
+    a(href=linkName)(class=className)=linkText
+        if block
+        block
+    
+mixin sectionHeaderSpan(headerText, spanClass, spanText, count)
+    div(class="section-header")
+        h2(class="title-section")=headerText
+        span(class=spanClass)=spanText
+        if(count!=="")    
+            +countText(count, " section-header--count")
+        if block
+        block
+
+mixin sectionHeader(headerText, count, className)
+    div(class="section-header "+className)
+        h2(class="title-section")=headerText
+        if(count!=="")    
+            +countText(count, " section-header--count")
+        if block
+        block
+
+mixin sectionHeaderSubtitle(text, count)
+    .section-header
+        h4.subtitle=text
+        if(count!=="")    
+            +countText(count, " section-header--count")
+
+
+mixin sectionHeaderSmall(headerText, count, titleClass, headerClass)
+    div(class="section-header "+headerClass)
+        h3(class="title--small "+titleClass)=headerText
+        if(count!=="")    
+            +countText(count, " section-header--count")
+        if block
+        block   
+        
+mixin sectionHeaderSmallBlock(headerText, titleClass)
+    div(class="section-header")
+        h3(class="title--small "+titleClass)=headerText
+            if block
+                block  
+
+mixin btn(className, text, count)
+    button(class="btn "+className)
+        span=text
+        if(count!=="")
+           +countText(count, "") 
+
+
+mixin DivSpanPRef(className, title, text)
+    div(class=className+"__body")
+        span(class=className+"__title")=title
+        p(class=className+"__text")=text
+        if block
+        block
+
+mixin linkDivImgSpan(className, link, srcImg, title, classFeature)
+    -var nameClass = className + " " + classFeature
+        a(href=link)(class = nameClass)
+            div(class=className+"__img")
+                img(src="static/images/content/products/"+srcImg alt="product")
+            span(class=className +"__title")= title
+
+
+            
+mixin blockAdd()
+    if block
+        block
+
+
+mixin footerLocationBlock(className, spanText, partText, iconName)
+    div(class=className)
+        +icon(iconName, className+"__icon "+iconName+"__icon")
+        span(class=className+"__title")=spanText
+        div(class=className+"__text")=partText
+            if block
+                block
+
+mixin divSpan(divClass, spanClass, spanText)
+    div(class=divClass)
+        span(class=spanClass)=spanText
+        if block
+            block
+            
+mixin divSpanA(divClass, spanClass, ...spanA)
+    div(class=divClass)
+        each spanValue in spanA
+            span(class=spanClass)=spanValue
+
+
+            
+mixin liDivSpanTextDiv(className, add,text,link, n, count)
+    - var nameClass = className+add;
+    li(class=nameClass+"__item")
+        +linkSpanCount(link, nameClass+"__link", nameClass+"__link-text", text, count)
+        if block
+            block
+            
+
+    
+//mixin subnav(className, add)
+//    - var nameClass = className+add;
+//    div(class=nameClass)
+//        div(class=nameClass+"__col") 
+//            if block
+//                block
+           
+mixin linkSpanCount(link, divClass, classLink, title, count)
+    div(class=divClass)
+        span(class=classLink)(href=link)=title+"sss"
+            if(count!=="")    
+                +countText(count, "")
+            if block
+                block
+                
+mixin blockHedearTitle(className, add, count, title, link )
+    - var nameClass = className+add;
+    - var n = 0;
+    div(class=nameClass+"__block")
+        div(class=nameClass+"__header")
+            span(class=nameClass+"__title")=title
+                +countText(count, "")
+        if(block)
+            block
+//        ul(class=nameClass+"__list")
+//            while n < 2
+//                li(class=nameClass+"__item")
+//                    a(class=nameClass+"__link")(href="")
+//                        span(class=nameClass+"__link-text")(href=link)="Vitamin"+n++
+//                            +countText("123", "")
+                
+mixin listLinkSpanCount(nameClass, count, title, link, countClass )
+    li(class=nameClass+"__item")
+        a(class=nameClass+"__link")(href=link)
+            span(class=nameClass+"__link-text")=title
+            +countText(count, "")
+    
+                
+//        ul(class=nameClass+"__list")
+//            while n < 2
+//                li(class=nameClass+"__item")
+//                    a(class=nameClass+"__link")(href="")
+//                        span(class=nameClass+"__link-text")(href=link)="Vitamin"+n++
+//                            +countText("123", "")
+                
+                
+                
+                
+                +liDivSpanTextDiv(nameClass, "", "Vitamin"+n, "", n++, "123" )
+//        a(href=link)(class=nameClass+"__header")
+//            span(class=nameClass+"__link-text")=title
+//            if(count!=="")    
+//               +countText(count, "")
+//        ul(class=nameClass+"__list")
+//            while n < 2
+//                +liDivSpanTextDiv(nameClass, "", "Vitamin"+n, "", n++, "123" )

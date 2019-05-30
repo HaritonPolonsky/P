@@ -1,0 +1,63 @@
+.advantages {
+    display: flex;
+    @media screen and (max-width: $phone-size) {
+        flex-direction: column;
+    }
+    & > * {
+        flex: 1;
+        &:not(:last-child) {
+            margin-right: 30px;
+            @media screen and (max-width: $tablet-size) {
+                margin-right: 10px;
+            }
+            @media screen and (max-width: $phone-size) {
+                margin-right: 0;
+                margin-bottom: 30px;
+            }
+        }
+
+    } 
+}
+.advantage {
+    display: flex;
+    & > * {
+        &:not(:last-child) {
+            margin-right: 30px;
+        }
+    }
+    &__icon {
+        fill: $main-action-color;
+        @include size(50px);
+        /*        &.icon {
+                    &-guarantee {
+                        @include size(50px)
+                    }
+                    &-support {
+                        @include size(50px)
+                    }
+                    &-test {
+                        height: 48px;
+                        width: 54px
+                    }
+                }*/
+
+    }
+    &__body {
+        @extend %FlexColumn;
+        letter-spacing: .3px;
+        font-size: 14px;
+    }
+    &__title {
+        font-size: 16px;
+        font-family: $medium-font;
+        margin-bottom: 4px;
+    }
+    &__text {
+        color: $text-info;
+    }
+    &__link {
+        margin-top: 8px;
+    }
+
+
+}

@@ -1,0 +1,49 @@
+.delivery
+    .delivery-details.details
+        .delivery-details__item.details__item
+            each v in [["Destination", "Israel", "Change", ""], ["Weight", 123, "", ""]]
+                if(v[0]==="Weight")
+                    +details(v, "delivery-details", "weight")
+                else
+                    +details(v, "delivery-details", "")
+                    
+    
+    form.table.radio-table
+        .table__header.radio-table__header
+            .table__row.radio-table__row.table__row--header
+                .table__column
+                    span.table-label Delivery
+                .table__column
+                    span.table-label Price
+                    span.text-descr Delivery+Duties+Taxes
+                .table__column
+                    span.table-label Estimated Delivery
+
+        .table__body.radio-table__body.radio-group
+            label.radio.radio-table__row
+                .table__column
+
+
+                    input(type="radio" name="delivery" value="1")
+                    span.radio__custom
+                    .radio__body
+                        img(src="static/images/content/products/prev-1.jpg" alt="company")
+                        span.radio__text Delivery1
+                .table__column
+                    +priceSale("", "", 80) 
+                .table__column
+                    span.date 12 April 2018
+
+            label.radio.radio-table__row
+                .table__column
+
+
+                    input(type="radio" name="delivery" value="1")
+                    span.radio__custom
+                    .radio__body
+                        img(src="static/images/content/products/prev-2.jpg" alt="company")
+                        span.radio__text Delivery1
+                .table__column
+                    +priceSale("", "", 80) 
+                .table__column
+                    span.date 12 April 2018

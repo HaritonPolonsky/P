@@ -1,0 +1,46 @@
+section.s-product-reviews
+    .container
+        +sectionHeaderSubtitle("Product reviews", "768")
+        .product-reviews
+            .product-block__big
+                .sort-block
+                    include ../../catalog/sort
+                    
+                .reviews
+                    each r in [1, 2]
+                        .review
+                            .review-header
+                                .product-rating
+                                    .stars
+                                        .star.star--full
+                                        .star.star--full
+                                        .star.star--full
+                                        .star
+                                            .star--half
+                                        .star
+                                .review-author
+                                    span.title-block Name
+                            .review-body
+                                p.review-body__text One of the two kids comes with this bottle every morning. It's kidssafe so they can not open it themselves ofcourse. Being 2 and 4 years old last winter was hard because of all the viruses the 4 year old brought home from school. 
+                                    | We started taking this during the spring and summer season, and we got through it luckily without too much trouble. We hope that maybe this helped and we hope that it might help during the winter season and for that it just might be a great product.
+                                .popup-gallery.review-gallery
+                                    -var im = 1;
+                                    while im < 4
+                                        a(href="static/images/content/products/1/"+im+".jpg" alt="product-review").review-gallery__item
+                                           img(src="static/images/content/products/1/"+im+++".jpg" alt="product-review").review-gallery__img
+                            .review-footer
+                                span.text-descr 29 April 2018
+                include ../../small-blocks/pagination
+
+
+            .product-block__small
+                .product-block__small--line
+                    span.title-block Ratings 3.7
+                
+                .rating-graph-container
+                    each n, index in [["57%", 57], ["12%", 12], ["15%", 15], ["10%", 10], ["6%", 6]]
+                        +ratingGraph(index+1, n[0], n[1], "")
+
+                .product-block__small--line
+                    a(href="").btn.btn--fill.btn--bg-transparent--green Add review
+                        

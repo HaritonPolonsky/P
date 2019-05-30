@@ -1,0 +1,73 @@
+mixin divLinkImage(className, image, link)
+    div(class=className)
+        a(class=className+"__image-link")
+            img(src="static/images/content/"+image alt="product")(class=className+"__image")  
+        if(block)
+            block
+        
+//div(class=className)
+//        a(href=link style="background-image:url('static/images/content/"+image+"')")(class=className+"__image")
+//        if(block)
+//            block
+ 
+mixin linkContentTitle(className, title, text, iconText, link)
+    a(href=link)(class=className+"__body")
+        div(class=className+"__content")
+           div(class=className+"__title")=title 
+           p(class=className+"__text")=text
+           +divIconSpan(className+"__icon", "hourglass", "actions-item__icon", iconText)
+        if(block)
+            block
+            
+
+mixin divMarkIcon(className, markClass, iconName, iconClass)
+    div(class=className+"__mark "+markClass)
+        +icon(iconName, iconClass)
+        
+mixin selectWrap(className, close)
+    div(class=className+"-selected select-wrap")
+        if(close !== "")
+            div(class=className+"-selected select-close")
+                +icon('close', className+'-selected__close-icon select__close-icon')
+        if(block)
+            block
+            
+//mixin selectBody(className       
+//    .location-selected__body.select-body
+//
+//        ul.location-selected__list.dropdown.select-list
+//            each val in ['region1','region2','region3','region4','region5','region6','region7', 'region8', 'region9','region10','region11','region12','region13']
+//                li(class="location-selected__item select-item")= val
+
+mixin toggle(className, title, current, items)
+    div(class=className +"__toggle toggle")
+        span(class=className +"__toggle-title toggle-title")=title
+        div(class=className+"__toggle-wrap toggle-wrap")
+            div(class=className+"__toggle-click "+"toggle-click")
+                span(class=className+"__toggle-current toggle-current show")=current
+            ul(class=className+"__toggle-list toggle-list")
+                each za in items
+                    if za!==current
+                        +listLinkSpanCount(className+"-toggle "+" toggle", za[1], za[0], "")
+                        
+
+mixin blockHeaderSmall(className, titleClass, title, count, toggleTitle,   ...items )
+    div(class=className)
+        +sectionHeaderSmall(title, count, titleClass, "")
+            if(toggleTitle !== "")
+                +toggle(className, toggleTitle,  items[0], items)
+                
+        if(block)
+            block
+
+
+
+
+mixin blockTitleContentPlist(title, ...text)
+    .static-block
+        if(title !== "")
+            .static-block--title=title
+        .static-block--content
+            each t in text
+                p.static-block--text=t
+                

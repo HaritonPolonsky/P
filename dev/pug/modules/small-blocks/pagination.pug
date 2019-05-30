@@ -1,0 +1,7 @@
+.pagination
+    ul.pagination__list
+        each page in [1, 2, 3, '...']
+            li.pagination__item
+                a(href="").pagination__link=page
+        li.pagination__item
+                a(href="").pagination__link +

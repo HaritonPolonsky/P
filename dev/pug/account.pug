@@ -1,0 +1,11 @@
+extends template/main
+
+block variables
+    - var title = 'Acount'
+    - var pageClass = 'acount-page'
+    - var navPage = 'Account'
+
+block content
+    include pages/account/account
+    include modules/products/viewed-products
+    include modules/small-blocks/questions

@@ -1,0 +1,90 @@
+.actions-prev {
+    display: flex;
+    @media screen and (max-width: $phone-size) {
+        flex-direction: column;
+    }
+    & > * {
+        flex: 1;
+        &:not(:last-child) {
+            margin-right: 30px;
+        }
+        @media screen and (max-width: $tablet-size) {
+            &:nth-child(n+3) {
+                display: none;
+                @media screen and (max-width: $phone-size) {
+                    display: flex;
+                }
+            }
+            &:not(:last-child) {
+                margin-right: 20px;
+                @media screen and (max-width: $phone-size) {
+                    margin-right: 0;//
+                    margin-bottom: 20px;//
+    }
+        }
+        }
+    }
+    .item-prev {
+        &__header {
+            height: 185px;
+            width: 100%;
+            
+            //width: 275px;
+        }
+    }
+}
+/*.action-prev {
+    border-radius: 4px;
+    overflow: hidden;
+    &__header {
+        display: flex;
+        align-items: flex-end;
+        height: 185px;
+        padding: 20px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        
+    }
+    &__body {
+        background-color: $white;
+        padding: 15px 20px;
+        
+    }
+    &__text {
+        display: flex;
+        flex-direction: column;
+    }
+    &__title {
+        font-size: 22px;
+        font-family: $medium-font;
+    }
+}*/
+
+.action-prev {
+    @extend %mainBorderRadius;
+    overflow: hidden;
+    @extend %FlexColumn;
+    &__body {
+        background-color: $white;
+        padding: 15px 20px;
+/*        &.add-cart {
+            justify-content: center;
+            width: 100%;
+    }*/
+        
+    }
+    &__text {
+        @extend %FlexColumn;
+        & > * {
+            justify-content: center;
+            display: flex;
+        }
+        
+    }
+    &__title {
+        font-size: 22px;
+        font-family: $medium-font;
+    }
+    
+}

@@ -1,0 +1,153 @@
+
+mixin formLine(lineClass)
+    if(lineClass!=="")
+        -var lineClass = "--"+lineClass
+    div(class="form-line form-input"+lineClass)
+        block
+
+mixin formLineInfo(formLineClass, text, link, linkClass, linkText)
+    div(class="form-line__info " + formLineClass)
+        span.form-line__info--title=text
+        a(class="link.form-line__info--link "+linkClass)(href=link)=linkText
+        if(block)
+            block
+
+
+//mixin inputWrap(labelText, className, linkClass, link, linkText)
+//    div(class="form-group " +className)
+//        div(class="form-group__label-wrap")
+//            label.form-group__label=labelText 
+//            if(linkClass !== "")
+//                a(href=link)(class=linkClass)=linkText
+//        block
+        
+mixin formError(text, textClass, errorList)
+    .form-error
+        span(class="form-error__text "+textClass)=text
+        if(errorList !== "")
+            ul.form-error__list
+                block
+
+mixin liError(className, text)
+    li(class="form-error__item "+className)=text
+    if(block)
+        block
+            
+mixin textArea(placeholderText, type, placeholderName, className)
+    textarea(placeholder=placeholderText type=type name=placeholderName)(class="textarea-field input-text "+className)
+        
+    
+mixin inputF(placeholderText, type, placeholderName, className, valueInput)
+    input(placeholder=placeholderText type=type name=placeholderName value=valueInput)(class="input-field input-text "+className)
+    //input(placeholder=placeholderText type=placeholderType name=placeholderName)(class="input-field input-text"+className)
+
+
+
+mixin checkboxP(text, className, colorClass, color)
+    label.checkbox
+        input(type="checkbox")
+        span.checkbox__custom
+        .checkbox__body
+            span.checkbox__text=text
+            if(color!=="")
+                div(class="checkbox__descr--color " + colorClass)(style='background-color: '+color)
+                    if(block)
+                        block
+
+mixin checkbox(text, count, colorClass, color)
+    label.checkbox
+        input(type="checkbox")
+        span.checkbox__custom
+        .checkbox__body
+            span.checkbox__text=text
+            if(color!=="")
+                +checkboxColor(color, colorClass)
+                //span.checkbox__descr(style='background-color: '+color)
+    if(count)
+        +countText(count, "") 
+
+mixin checkboxColor(color, className) 
+    span(class="checkbox__descr--color " + className)(style='background-color: '+color)
+
+mixin checkboxList(text, count, colorClass, color)
+    li.filter-list__item
+        +checkbox(text, count, colorClass, color)
+
+mixin inputBut(formGroupClass, val, btnClass)
+    div(class="form-group form-line__input--btn" + formGroupClass)
+        input(type="submit" value=val)(class="btn"+btnClass)
+
+
+        
+mixin inputWrap(labelText, className, linkClass, link, linkText)
+    div(class="form-group " +className)
+        div(class="form-group__label-wrap")
+            label.form-group__label.label=labelText 
+            if(linkClass !== "")
+                a(href=link)(class=linkClass)=linkText
+        block
+        
+mixin inputFieldIcon(icon, iconClass)
+    .input-field__wrap
+        +icon(icon, iconClass)
+        if(block)
+            block
+
+mixin passwords(linkClass, link, linkText, formClass)
+    +inputWrap("Password", " form-group--require "+formClass, linkClass, link, linkText)
+        .input-field__wrap
+            +icon('eye', 'password-icon')
+            +inputF("Password", "password", "password", "")
+
+        if(block)
+            block
+
+mixin password(formText, formClass)
+    +inputWrap(formText, " form-group--require "+formClass, "", "", "")
+        +inputFieldIcon('eye', 'password-icon')
+            +inputF("Password", "password", "password", "")
+        if(block)
+            block
+        
+
+
+
+mixin formLineText(className, text) 
+    span(class="form-line__text"+className)=text
+    
+
+//mixin formCommets()
+
+mixin formFooter(textB, classB, spanClass, pClass, spanText)
+    .form-footer
+        +formLine("")
+            +inputBut(classB, textB, " btn--size-l btn--fill")
+            if(spanClass!=="")
+               span(class = "form-line__text "+ spanClass)=spanText
+        if(pClass!=="")
+            .form-line
+                p(class= "form-info "+pClass) Asking a question you agree to <a href="" class="form-info__link "> the privacy policy</a>
+
+mixin uploadFile()
+    .form-group
+        label.file-upload
+            input(type="file")
+            +divIconSpan("file-upload__icon", "upload", "file-upload__icon", "Upload file")
+
+
+
+mixin divIconSpanF(divClass, iconName, iconClass, spanClass, spanText)
+    div(class=divClass)
+        +icon(iconName, iconClass)
+        span(class=spanClass)=spanText
+
+//+formLine("phone")
+//    +inputWrap("Telephone", " form-group--width-m form-group--require")
+//        +inputF("+791234567890", "phone", "phone", "")
+ 
+
+//.form-footer
+//    +formLine("")
+//        +inputBut(" form-group--width-m", "Suggest to improve", " btn--size-l btn-fill")
+//    .form-line
+//        p.form-info Asking a question you agree to <a href="" class="form-info__link"> the privacy policy</a>

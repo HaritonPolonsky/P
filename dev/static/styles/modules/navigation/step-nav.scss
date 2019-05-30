@@ -1,0 +1,75 @@
+.step-nav {
+    &__list {
+        display: flex;
+        border: 2px solid $main-action-color;
+        border-radius: 4px;
+        display: flex;
+        background-color: $main-bg;
+       
+    }
+    &__item {
+        color: $label;
+        position: relative;
+        flex: 1;
+        padding: 10px 15px;
+        cursor: pointer;
+        text-align: center;
+        @media screen and (max-width: $phone-size) {
+            text-align: end;
+            padding: 10px;
+        }
+        &:after, &:before {
+            @include triangle();
+            left: 100%;
+            
+        }
+        &:after {
+            border-color: transparent transparent transparent $main-bg;
+            top: 0;
+            border-width: 23px 0 23px 40px;
+            z-index: 2;
+            @media screen and (max-width: $phone-size) {
+                border-width: 23px 0 23px 27px;
+                //border-width: 20px 0 20px 20px;
+            }
+        }
+        &:before {
+            border-color: transparent transparent transparent $main-action-color;
+            border-width: 25px 0 25px 45px;
+            top: -2px;
+            z-index: 1;
+            @media screen and (max-width: $phone-size) {
+                border-width: 25px 0 25px 30px;
+                //border-width: 22px 0 22px 23px;
+            }
+        }
+        &:last-child {
+            &:after, &:before {
+                display: none;
+            }
+        }
+        &.tabs-list__item--active {
+            background-color: $white;
+            color: $base-text;
+            cursor: default;
+            font-family: $medium-font;
+            &:after {
+                border-color: transparent transparent transparent $white;
+            }
+        }
+    }
+    &__text {
+        display: block;
+            @media screen and (max-width: $phone-size) {
+                display:  none;
+            }
+        &-mobile {
+            display: none;
+            @media screen and (max-width: $phone-size) {
+                //font-size: 14px;
+                display: block;
+                
+            }
+        }
+    }
+}

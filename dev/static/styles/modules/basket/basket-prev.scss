@@ -1,0 +1,51 @@
+.basket-prev {
+    @extend %FlexColumn;
+    color: $white;
+    position: relative;
+    &__icon {
+        @include size(25px);  
+        fill: $white;
+        margin-bottom: 7px;
+        @media screen and (max-width: $tablet-size) {
+            margin-bottom: 0px;
+}
+    }
+    &__number {
+       position: absolute;
+       @include size(24px);
+       right: -12px;
+       top: -12px;
+       line-height: 24px;
+       color: $base-text;
+       background-color: $main-action-color;
+       text-align: center;
+       font-size: 12px;
+       display: none;
+       border-radius: 50%;
+       @media screen and (max-width: $tablet-size) {
+           display: block;
+       }
+       @media screen and (max-width: $phone-size) { 
+           @include size(16px);
+           font-size: 10px;
+           top: -8px;
+           right: -8px;
+           line-height: 16px;
+       }
+       
+    }
+    &__title {
+        font-family: $bold-font;
+        line-height: 20px;
+        margin-bottom: 2px;
+    }
+    &__count {
+        font-size: 14px;
+        line-height: 18px;
+    }
+    &__title, &__count {
+        @extend %displayNoneTablet;
+    }
+    
+
+}

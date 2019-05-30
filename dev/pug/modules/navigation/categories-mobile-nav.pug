@@ -1,0 +1,70 @@
+nav.categories-mobile-nav
+    ul.categories-mobile-nav__list
+        - var list = 0;
+        while list < 3
+            - var column = 0;
+            +liDivSpanTextDiv("categories-mobile", "-nav", "Category"+list, "", list++, "123")
+                //.catalog-subnav(data-simplebar)
+                .categories-mobile-subnav
+                    .categories-mobile-subnav__header--link
+                        a(href="").categories-mobile-subnav__title Subcategoriess
+                            +countText(123, "")
+                    - var block = 0;
+
+                    while block < 2
+                        +blockHedearTitle("categories-mobile", "-subnav", "123", "Sub"+column+list+block++, "")
+                            ul.categories-mobile-subnav__list
+                                - var n = 0;
+                                while n < 2
+                                    +listLinkSpanCount("categories-mobile-subnav", "123", "Product"+n++, "")
+
+
+
+
+
+
+
+//nav.categories-mobile-nav
+//    ul.categories-mobile-nav__list
+//        li.categories-mobile-nav__item.categories-mobile-nav__item--active
+//            .category-mobile-nav__label.category-mobile__block
+//                span.category-mobile-nav__label-text CategoryA
+//                span.count-text 1235
+//            ul.categories-mobile-subnav
+//                li.category-mobile-subnav__item.categories-mobile-subnav--active
+//                    a(href="").category-mobile-subnav__link.category-mobile-subnav__link--main
+//                        .category-mobile-subnav__label.category-mobile__block
+//                            span.category-mobile-subnav__label-text All in Category
+//                            span.count-text 123
+//                li.category-mobile-subnav__item
+//                    .category-mobile-subnav__label.category-mobile__block
+//                        span.category-mobile-subnav__label-text SubCategoryA
+//                        span.count-text 123
+//                    ul.categories-mobile-subnav-items
+//                        li.category-mobile-subnav-items
+//                            a(href="").category-mobile-subnav-items__link.category-mobile__block ProductsA
+//                                span.count-text 123
+//                        li.category-mobile-subnav-items
+//                            a(href="").category-mobile-subnav-items__link.category-mobile__block ProductsB
+//                                span.count-text 123
+//
+//                li.category-mobile-subnav__item
+//                    .category-mobile-subnav__label.category-mobile__block
+//                        span.category-mobile-subnav__label-text SubCategoryA
+//                        span.count-text 123
+//
+//                 
+//                 
+//        li.categories-mobile-nav__item
+//            .category-mobile-nav__label.category-mobile__block
+//                span.category-mobile-nav__label-text CategoryA
+//                span.count-text 1235
+//        li.categories-mobile-nav__item
+//            .category-mobile-nav__label.category-mobile__block
+//                span.category-mobile-nav__label-text CategoryA
+//                span.count-text 1235
+//        li.categories-mobile-nav__item
+//            .category-mobile-nav__label.category-mobile__block
+//                span.category-mobile-nav__label-text CategoryA
+//                span.count-text 1235
+ 

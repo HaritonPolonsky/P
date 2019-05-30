@@ -1,0 +1,222 @@
+@mixin notLastChild($property) {
+    &:not(:last-child) {
+        margin-right: $property;
+    }
+}
+//@include size(50px);
+@mixin triangleTop($left, $top, $borderWidth, $color) {
+    @include triangle();
+    top: $top;
+    left: $left;
+/*    width: 0;
+    height: 0;*/
+/*    border-style: solid;*/
+    border-width: 0 $borderWidth $borderWidth $borderWidth;
+    border-color: transparent transparent $color transparent;
+}
+
+@mixin triangleTopB($left, $bottom, $borderWidth, $color) {
+    @include triangle();
+    bottom: $bottom;
+    left: $left;
+/*    width: 0;
+    height: 0;*/
+/*    border-style: solid;*/
+    border-width: 0 $borderWidth $borderWidth $borderWidth;
+    border-color: transparent transparent $color transparent;
+}
+
+
+
+
+@mixin arrow($size, $transform, $deg, $color) {
+    @include size($size);
+    content: '';
+    background-color: $color;
+    transform: $transform rotate($deg);
+    position: absolute;
+}
+
+@mixin triangleBottom($right, $bottom, $borderWidth, $color) {
+    //content: '';
+    //position: absolute;
+    @include triangle();
+    right: $right;
+    bottom: $bottom;
+    //width: 0;
+    //height: 0;
+    //border-style: solid;
+    border-width: $borderWidth $borderWidth 0 $borderWidth;
+    border-color: $color transparent transparent transparent;
+}
+
+@mixin triangleRight($borderWidth, $top, $right, $color) {
+    @include triangle();
+    top: $top;
+    right: $right;
+    border-width: $borderWidth 0 $borderWidth $borderWidth;
+    border-color: transparent transparent transparent $color;
+}
+
+@mixin triangle() {
+    position: absolute;
+    content: ''; 
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+@mixin linearGradient($direction) {
+    background-image: linear-gradient(to $direction, #ffffff, rgba(255, 255, 255, 0));
+    //background-color: red;
+    content: '';
+    display: block;
+    height: 30px;
+    left: 0;
+    position: absolute;
+    right: 0;
+}
+//@include orderInM($tablet-size, );
+/*@media screen and (max-width: $tablet-size) {
+    
+}*/
+@mixin orderInM($maxWidth, $orderN) {
+    @media screen and (max-width: $maxWidth) {
+        order: $orderN;
+    }
+}
+
+
+@mixin marginInChildren($margin1, $margin2, $marginTop, $marginBottom) {
+    margin: $margin1 $margin2;
+    &:first-child {
+        margin-top: $marginTop;
+    }
+    &:last-child {
+        margin-bottom: $marginBottom; 
+    }     
+
+}
+
+@mixin size($a,$b: $a) {
+    width: $a;
+    height: $b;
+}
+
+@mixin placeholder {
+    ::-webkit-input-placeholder {@content}
+    :-moz-placeholder           {@content}
+    ::-moz-placeholder          {@content}
+    :-ms-input-placeholder      {@content}
+}
+//@extend %FlexAlignItemsCenter;
+%FlexAlignItemsCenter {
+    display: flex;
+    align-items: center;
+}
+%FlexColumn {
+    display: flex;
+    flex-direction: column;      
+}
+/*%allItems {
+    margin-bottom: 0;
+    margin-top: 20px;
+    a {
+        color: $link-color;
+    }
+}*/
+
+%boxShadow {
+    box-shadow: 0 0 5px 0 rgba(159, 197, 178, 0.5);
+}
+%mainBorderRadius { 
+    border-radius: 4px;
+}
+
+%formAcount {
+    flex: 0 0 55%;
+    width: 55%;
+}
+%tab {
+    padding: 15px 20px;
+    font-size: 14px;
+    line-height: 1.3;
+    @media screen and (max-width: $tablet-size){
+        padding: 15px 10px;
+    }
+}
+%titleSmall {
+    font-size: 30px;
+    font-family: $medium-font;
+    line-height: 1.25;  
+    @media screen and (max-width: $phone-size) {
+        font-size: 26px;
+    }
+}
+/*%triangleOpen {
+    &:after {
+        transform: rotate(180deg);
+    }
+}
+%triangleLinkOpen {
+    &:after {
+        transform: rotate(45deg);
+    }
+}*/
+//@extend %tabMobileBorder;
+%tabMobileBorder {
+    border-radius: 4px 4px 0 0;
+    border-bottom: 1px solid #ededed;
+}
+%categoryMobileLabel {
+    line-height: 24px;
+    padding: 8px 25px 8px 15px;
+    cursor: pointer;
+    border-bottom: 1px solid $border;
+    font-family: $medium-font;
+}
+
+%popupBackB {
+    @media screen and (max-width: $phone-size) { 
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 3;
+        background-color: rgba($dark-bg, .3);
+        right: 0;
+        top: 0;
+    }
+}
+
+%displayNoneTablet {
+    @media screen and (max-width: $tablet-size) {
+        display: none;
+    }
+}
+//@extend %displayNoneTablet;
+%MarginInChildren {
+    margin: 10px 0px;
+    &:first-child {
+        margin-top: 0px;
+    }
+    &:last-child {
+        margin-bottom: 0px; 
+    }     
+
+}
+
+%input {
+    background-color: $white;
+    @extend %mainBorderRadius;
+    border: 1px solid $input-border-color;
+    box-shadow: none;
+    
+    padding: 10px 15px;
+    width: 100%;
+    @include placeholder {
+        color: $text-info;
+    }
+}
+//@extend %input;
+
+//@extend %FlexColumn;

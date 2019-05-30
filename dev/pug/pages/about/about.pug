@@ -1,0 +1,40 @@
+include ../../modules/small-blocks/breadcrumbs
+section.s-about
+    .container
+        +sectionHeader("About", "", "")
+        .about-wrap
+            .about-block.about-block--width-small
+                p.about__text In business since 1996, iHerb is run from multiple distribution centers in the United States and Asia
+                ul.about-list
+                    li.about-list__item iHerb guarantees that you will receive the best overall value in the world for over 30,000 natural products -- all authentic brands sold in the U.S. market, so long as you order at least once every 60 days. We will also guarantee the delivery of your order.
+                    li.about-list__item We only allow reviews from customers who have ordered the specific product from iHerb. This assures honest and accurate reviews to help you make smarter buying choices.
+                    li.about-list__item iHerb’s distribution centers are entirely climate-controlled, which protects the products from such conditions as humidity, heat and cold. In addition, our distribution centers are industry-certified by NSF International, earning Good Manufacturing Practice (GMP) certification.
+                p.about__text At iHerb we believe in diversity. In addition to the United States, iHerb team members come from the following countries
+            .about-block
+                .about-video.video
+                    +video("Video presentation", "#popup-video-review", "about", "about-video__content", "play-button")
+                    +video("Videso tour", "#popup-video-gide", "about", "about-video__content", "eye")
+            .about-block.about-block--border
+                +prevDocument("Recently Viewed Products", 7, "certificates")
+                //.slider
+                    //+sectionHeader("Recently Viewed Products", "")
+                        //.section-header__right
+                            //span.slider__count
+                    //.slider__body
+                        //.slider__navigation
+                            //+sliderNavNavigation("slider__nav", "")
+                        //- var n = 1;
+
+                        //.js-slider
+                            //while n < 7
+                                //+prevImg("document", "", n++, "certificates")
+                                    //+divIconSpan("document__icon", "pdf", "document__icon", "Open PDF" )
+            .about-block
+                h3.title--small Team
+                ul.employees-list
+                    each n in [["leader-banket", "Name1"], ["leader-banket", "Name2"], ["leader-banket", "Name3"], ["leader-banket", "Name4"], ["leader-banket", "Name5"], ["leader-banket", "Name6"], ["leader-banket", "Name7"], ["leader-banket", "Name8"]]
+                        +liImgSpanSpan("employee", "team/"+n[0], "employee", n[0], n[1])
+                    
+                            
+            .about-block
+                +prevDocument("Recommendations", 7, "recommendations")

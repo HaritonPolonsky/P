@@ -1,0 +1,91 @@
+.form-group {
+    display: flex;
+    align-items: flex-start;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    &__label {
+/*        color: $form-label;
+        text-transform: uppercase;
+        letter-spacing: .65px;
+        
+        font-size: 12px;*/
+        &-wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 10px;
+           .link {
+               font-family: $main-font;
+               padding-left: 15px;
+               font-size: 14px;
+               
+           }
+        }
+    }
+    &.form-group {
+        
+        &--width {
+            &-s {
+                max-width: 150px;
+                flex: 0 0 150px;
+                @media screen and (max-width: $phone-size) {
+                    flex: 1;
+                    max-width: 100%;
+            }
+            }
+            &-m {
+                //max-width: 245px;
+                max-width: 200px;
+                flex: 0 0 200px;
+                @media screen and (max-width: $phone-size) {
+                    flex: 1;
+                    max-width: 100%;
+                    width: 100%;
+            }
+            }
+            &-l {
+                min-width: 200px;
+                flex: 1;
+                //max-width: 245px;
+/*                max-width: 280px;
+                flex: 0 0 280px;*/
+                @media screen and (max-width: $phone-size) {
+                    //flex: 1;
+                    max-width: 100%;
+            }
+                
+            }
+            &-p {
+                @extend %formAcount;
+                @media screen and (max-width: $phone-size) {
+                    flex: 1;
+                    width: 100%;
+            }
+            }
+            
+        }
+    }
+    &--require {
+        .form-group__label {
+            position: relative;
+            &:after {
+                content: '*';
+                color: $warning-color;
+                font-size: 20px;
+                position: absolute;
+                right: -10px;
+                top: -10px;
+
+            }
+        }
+    }
+    &-submit {
+        display: flex;
+        & > * {
+            @include notLastChild(20px)
+        }
+    }
+}
+

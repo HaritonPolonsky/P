@@ -1,0 +1,78 @@
+mixin prev(n, quantity)    
+    .item-prev.product-prev
+        a(href="").item-prev__header
+            .product-prev__marks.marks
+                .product-prev__mark.mark--yellow -30%
+            img(src="static/images/content/products/prev-"+n+".jpg" alt="product").pre-img.product-prev__img
+        .product-prev__body
+            +title("product-prev","Solgar, Ubiquinol (Reduced CoQ10), 100 mg, 50 Softgels", "1234")
+            ul.product-prev__info--list
+                +list2span("product-prev__info","Code", "829835006540")
+                +list2span("product-prev__info","Expiration Date", "January 2020")
+                li.product-prev__price.price
+                    +priceSale("", 80, 60) 
+                
+        .product-prev__footer
+            if(quantity ==="quantity")
+                .product-prev__quantity
+                    +quantity()
+            button.btn.btn--fill
+                +icon('shopping-cart', 'btn__icon')
+                span Add to cart
+                
+mixin prevCategory(nameClass, number, img, title, count)
+    - var num = 0;
+    div(class=nameClass+" category") 
+        if(img!=="")
+            +img("category-"+nameClass, img)
+        div(class=nameClass+" category__body")
+            +title(nameClass+" category", title, count)
+            ul(class=nameClass+" category__list")
+                while num < number
+                    -var d = num++
+                    +listCountLinkClass("","Minerals", nameClass+" category", "123", "link")
+                    +listCountLinkClass("","Vitamins", nameClass+" category", "123", "link")
+                    +listCountLinkClass("","Fish Oil & Omegas", nameClass+" category", "123", "link")
+                    +listCountLinkClass("","Antioxidants", nameClass+" category", "123", "link")
+                    +listCountLinkClass("","All supplements", nameClass+" category", "123", "link")
+                    
+
+mixin prevDocument(header, number, name)
+    .slider
+        +sectionHeaderSmall(header, "", "", "")
+            .section-header__right
+                span.slider__count
+        .slider__body
+            .slider__navigation
+                +sliderNavNavigation("slider__nav", "")
+            - var n = 1;
+
+            .js-slider
+                while n < number
+                    +prevImg("document", "", n++, name)
+                        +divIconSpan("document__icon", "pdf", "document__icon", "Open PDF" )
+
+//mixin quantity()
+//    .quantity
+//        +btnIcon("quantity__btn quantity__btn--minus", "minus", "quantity__icon")
+//        input(class="quantity__current" type="text" data-descr="qty" value="0")
+//        +btnIcon("quantity__btn quantity__btn--plus", "plus", "quantity__icon")
+        
+mixin quantity()
+    .quantity
+        +btnIcon("quantity__btn quantity__btn--minus", "minus", "quantity__icon")
+        .quantity__current
+            span.quantity__current-text 0
+            //span.quantity__label Qty
+        +btnIcon("quantity__btn quantity__btn--plus", "plus", "quantity__icon")
+ 
+mixin prevImg(className, link, img, alt)
+    div(class=className+"__item-prev"+" item-prev ")
+        a(href=link)(class=className+"__item-prev__header "+" item-previtem-prev__header")
+            img(src="static/images/content/certificates/"+img+".jpg" alt=alt)(class=className+"__pre-img"+" pre-img pre-img--big")
+            if(block)
+                block
+            
+mixin btnIcon(className, icon, iconClass)
+    div(class=className)(data-direction=icon)
+        +icon(icon, iconClass)

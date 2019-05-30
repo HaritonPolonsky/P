@@ -1,0 +1,12 @@
+.checkout-nav.step-nav
+    ul.checkout-nav__list.step-nav__list
+        each v, index in [["Contacts", "tabs-list__item--active"], ["Delivery", ""], ["Pay", ""]]
+            - var n = index+1;
+            li(class=n+" tabs-list__item checkout-nav__item step-nav__item "+v[1])(data-step= n)(show-tab="tab-checkout-nav-"+n)
+                span.checkout-nav__text.step-nav__text.subtitle-size--s=v[0]
+                span.checkout-nav__text.step-nav__text.subtitle-size--s.step-nav__text-mobile="Step "+n
+    
+    
+            
+        
+                            

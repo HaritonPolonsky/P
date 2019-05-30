@@ -1,0 +1,10 @@
+extends template/main
+
+block variables
+    - var title = 'Search results'
+    - var pageClass = 'search-results-page'
+
+block content
+    include pages/search-results-page/search-results-page
+    include modules/products/viewed-products
+    include modules/small-blocks/questions

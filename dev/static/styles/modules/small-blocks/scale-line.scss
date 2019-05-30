@@ -1,0 +1,96 @@
+.scale-line {
+    background-color: $main-action-color;
+    position: absolute;
+    height: 5px;
+    top: 30px;
+    width: 0px;
+    transition: all linear .3s;
+    z-index: 1;
+    left: 1px;
+
+    //wrapper
+    &__wrap {
+        position: relative;
+        padding: 30px 0;
+        margin: 30px 10px;
+         @media screen and (max-width: $phone-size) {
+            margin: 20px 10px;
+        }
+    }
+    &__inner {
+        align-items: flex-end;
+        background-color: $border;
+        display: flex;
+        justify-content: space-between;
+        height: 5px;
+    }
+    &__item {
+        //border-left: 1px solid $input-border-color;
+        border-left: 1px solid $border;
+        height: 20px;
+        margin-bottom: -5px;
+        position: relative;
+        &.scale-item--active {
+            .scale-line__number {
+                background-color: $main-action-color;
+            }
+        }
+        &.scale-line__item {
+            &--descr{
+                
+                &-right {
+                    &:before {
+                        left: auto;
+                        right: -1px; 
+                    }
+
+                }
+                &-center {
+                    &:before {
+                        left: -50%;
+                        transform: translateX(-50%); 
+                    }
+
+                }
+                &-left {
+                    &:before {
+                        right: auto;
+                        left: -1px; 
+                    }
+
+                }
+            }
+
+        }
+        &:before  {
+            content: attr(data-fast-scale);
+            display: block;
+            font-size: 12px;
+            position: absolute;
+            color: $text-info;
+            top: -15px;
+            white-space: nowrap;
+            @media screen and (max-width: $phone-size) {
+                display: none;
+            }
+        }
+
+    }
+    &__number {
+        position: absolute;
+        font-size: 14px;
+        line-height: 24px;
+        cursor: pointer;
+        left: -12px;
+        border-radius: 50%;
+        height: 24px;
+        width: 24px;
+        text-align: center;
+        top: 100%;
+        &:hover {
+            background-color: $white;
+        }
+
+    }
+}
+

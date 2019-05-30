@@ -1,0 +1,57 @@
+.input-text {
+    @extend %input; 
+    &.error {
+        border-color: $warning-color;   
+        &::placeholder {
+            color: $warning-color;
+        }
+    }
+}
+.input-field, .input-text, .textarea-field {
+    &:hover, &:focus, &:active {
+        border: 1px solid $main-action-color;
+    }
+}
+.input-field {
+    height: 50px;//100px
+    &.input-field {
+        &--size {
+            &-s {
+                border-radius: 4px;
+                padding-left: 10px;
+                height: 40px;
+                font-size: 14px;
+                line-height: 20px;
+                @media screen and (max-width: $phone-size) {
+                    font-size: 16px;
+                }
+            }
+        }
+        &--width {
+            &-s {
+                max-width: 245px;
+            }
+        }
+    }
+    &__wrap {
+        position: relative;
+        width: 100%;
+    }
+}
+
+.textarea-field {
+    height: 100px;
+    
+    
+    &.textarea-field--height {
+        &-s {
+            height: 50px;
+            padding: 15px;//
+        }
+    }
+/*    
+    &.scale-text {
+        margin-right: 10px;
+    }*/
+
+}

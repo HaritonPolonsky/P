@@ -1,0 +1,111 @@
+.tags {
+    align-items: flex-start;
+    display: flex;
+    font-size: 14px;
+    line-height: 1.3;
+    
+    @media screen and (max-width: $phone-size) {
+           display: none;
+
+        }
+    &.tags--active {
+        .tags__body {
+            height: auto;
+        }
+    }
+    & > * {
+        &:not(:last-child) {
+            margin-right: 10px;
+        }
+    }
+    
+    &__title {
+        font-family: $medium-font;
+        flex-shrink: 0;
+        margin-right: 15px;
+        &.tags__title-column {
+            font-family: $main-font;
+            font-size: 24px;
+            line-height: 1.3;
+            margin-bottom: 10px;
+            margin-right: 0;
+            
+            
+        }
+        
+    }
+    &-row {
+        & > * {
+            margin-bottom: 10px;
+        &:not(:last-child) {
+            margin-right: 10px;
+            
+        }
+        }
+        &--first {
+            &--line {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            //flex-direction: column;
+        }
+        }
+    }
+    &-column {  
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        width: 100%;
+        justify-content: space-between;
+        
+
+    }
+    &__body {
+        display: flex;
+        flex-wrap: wrap;
+        //height: 190px;
+        height: 56px;
+        overflow: hidden;
+        align-items: center;
+        &.tags__body--column {
+            height: 96px;
+            margin-bottom: 30px;
+            .tags-row--first--line {
+                flex-direction: column;
+                
+            }
+        }
+        
+/*        & > * {
+            margin-bottom: 10px;
+        &:not(:last-child) {
+            margin-right: 10px;
+            
+        }
+        &.tags__title {
+            margin-right: 15px;
+        }
+    }*/
+    }
+    &__toggle {
+        border-bottom:  1px solid $link-color;
+        color: $link-color;
+        cursor: pointer;
+        //padding-top: 1%;
+        font-family: $medium-font;
+        flex-shrink: 0;
+        margin-left: 10px;
+    }
+    
+}
+
+.tag {
+    background-color: $white;
+    max-width: 185px;
+    border-radius: 4px;
+    display: inline-block;
+    padding: 5px 10px;
+    
+    
+    
+}

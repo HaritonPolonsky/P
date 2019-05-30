@@ -1,0 +1,26 @@
++popupId("popup-registration")
+    .hide-on-success.popup-main
+        .popup-body
+            +popupHeader("Create an Account")
+            .popup__block
+                form.form
+                    .form__body.form__body--blocks
+                        .form-line__block.form-line__block--big
+                            +formLine("mail")
+                                +inputWrap("Email", " form-group--require", "", "", "")
+                                    +inputF("Email", "email", "mail", "")
+                                    
+
+                            +formLine("password")
+                                +password("Password", "")
+                                    +formError("Write password", "", "errorList")
+                                        +liError("form-error__item--change", "Length 8 minimum")
+                                        +liError("form-error__item--right", "Letters and digites")
+                            +formLine("name")
+                                +inputWrap("Name", " form-group--require", "", "", "")
+                                    +inputF("Name", "text", "name", "")
+        
+                        .form-line__block.form-line__block--small
+                            +formLineInfo("", "Have Account?", "#popup-login", "link link-green link-underline popup-link", "Sign In")
+                        +formFooter("Create an Account", " form-group--width-p","form-line__text--color-black item-form-center", "item-form-center", "Get 10% additional credit")
+                                

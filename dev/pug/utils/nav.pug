@@ -1,0 +1,20 @@
+mixin filterRange(dataRangeType)
+    .filter-slider
+        .filter-slider__values
+            input.input-field.input-text.input-field--size-s.filter-slider__value.filter-slider__value--from
+            .filter-slider__values-line
+            input.input-field.input-text.input-field--size-s.filter-slider__value.filter-slider__value--to
+        .filter-slider__line(data-range-type=dataRangeType)  
+        
+
+//mixin tab(tabClass, ...items)
+//    ul(class="tabs-main"+" tabs-list main-tabs__item")
+//        each v in items
+//        li(class="tabs-main"+"__item "+"tabs-list__item tabs--aside tabs-list__item--active")(show-tab='tab-orders')
+//            .tabs-main__text--wrap
+//                span(class="tabs-main"+"__text")='Orders'
+//                span.count-text 123
+//        li(class="tabs-main"+"__item "+"tabs-list__item tabs--aside")(show-tab='tab-items')
+//            .tabs-main__text--wrap
+//                span(class="tabs-main"+"__text")='Purchased items'
+//                span.count-text 123

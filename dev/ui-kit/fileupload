@@ -1,0 +1,41 @@
+.file-upload
+    span.file-upload__text Прикрепите файл
+    .file-upload__btn
+        label.file-upload__btn_label
+            input(type="file")
+            span.file-upload__btn_text Загрузить
+
+                  
+.file-upload {
+  align-items: center;
+  display: flex;
+  &__text { margin-right: 10px; }
+  &__btn {
+    background: $alto;
+    box-shadow: inset 0 1px 5px 1px rgba(0, 0, 0, 0.1);
+    flex: 0 0 140px;
+    height: 40px;
+    margin-left: auto;
+    overflow: hidden;
+    position: relative;
+    width: 140px;
+    input[type="file"] { display: none;  }
+    &_label {
+      align-items: center;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      height: 100%;
+      left: 0;
+      top: 0;
+      position: absolute;
+      width: 100%;
+    }
+  }
+}
+
+
+$(".file-upload input[type=file]").change(function(){
+            let filename = $(this).val().replace(/.*\\/, "");
+            $(this).closest('.file-upload').find('.file-upload__text').html(filename);
+        });

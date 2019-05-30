@@ -1,0 +1,59 @@
+//mixin prevCategory(nameClass, number, img, title, count)
+//    - var num = 0;
+//    div(class=nameClass+" category") 
+//        if(img!=="")
+//            +img("category-"+nameClass, img)
+//        div(class=nameClass+" category__body")
+//            +title(nameClass+" category", title, count)
+//            ul(class=nameClass+" category__list")
+//                while num < number
+//                    -var d = num++
+//                    +listCountLinkClass("","Minerals", nameClass+" category", "123", "link")
+//                    +listCountLinkClass("","Vitamins", nameClass+" category", "123", "link")
+//                    +listCountLinkClass("","Fish Oil & Omegas", nameClass+" category", "123", "link")
+//                    +listCountLinkClass("","Antioxidants", nameClass+" category", "123", "link")
+//                    +listCountLinkClass("","All supplements", nameClass+" category", "123", "link")
+//                    
+
+//include ../../modules/small-blocks/breadcrumbs
+//section.s-subcategory
+//    .container
+//        +sectionHeader("Subcaategory name", 1234)
+//        .subcategory-wrap
+//            aside.subcategory__aside
+//                .subcategory__aside-mobile--wrap
+//                    ul.subcategory-mobile-nav.tabs-list
+//                        li.tabs-list__item.subcategory-mobile-nav__item.tabs--aside(show-tab="tab-category")
+//                            span.subcategory-mobile-nav__text Subcategory
+//                        li.tabs-list__item.subcategory-mobile-nav__item.tabs--aside(show-tab="tab-filter")
+//                            span.subcategory-mobile-nav__text Filter
+//                        li.tabs-list__item.subcategory-mobile-nav__item.tabs--aside(show-tab="tab-searching")
+//                            span.subcategory-mobile-nav__text Popular searching
+//                    .tabs-content
+//                        .tab.tab-category
+//                            +prevCategory("list", 1, "", "", "")
+//                        .tab.tab-filter 
+//                            include ../../modules/subcategories/filter
+//                        .tab.tab-searching
+//                            +prevCategory("list", 1, "", "", "")
+//                .subcategory__aside--wrap
+//                    +prevCategory("list", 1, "", "Suplements", 99)
+//                    include ../../modules/subcategories/filter
+//            main.subcategory__main
+//                include ../../modules/subcategories/tags
+//                
+//                .subcategory__sort
+//                    include ../../modules/subcategories/sort
+//                .subcategory__products-prev
+//                    each n in [1, 2, 3, 4, 5, 6]
+//                        +prev(n, "quantity")
+//                include ../../modules/small-blocks/pagination
+//                
+//                section.s-popular-searching
+//                    .container--inside
+//                        +sectionHeaderSmall("Popular searching in this category", 1234)
+//                        .popular-searching
+//                            +prevCategory("list", 1, "", "Supplements", 12)
+//                            +prevCategory("list", 1, "", "Supplements", 12)
+//                            +prevCategory("list", 1, "", "Supplements", 12)
+//                

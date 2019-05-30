@@ -1,0 +1,33 @@
+header.header
+    .header-top
+        .container
+            include location
+            include ../navigation/main-nav
+            .user-nav.header-top__user-nav
+                a(href="#popup-login").user-nav__link-header.link-green.popup-link Sign In  
+    .header-main
+        .container
+            include ../navigation/mobile-nav  
+            if(pageClass === 'index-page')
+                .logo.header-main__logo
+                    img(src="static/images/general/eco.png").logo__img
+                    span.logo__text Natural shop
+            else
+                a(href="index.html").logo.header-main__logo
+                   img(src="static/images/general/eco.png").logo__img
+                   span.logo__text Natural shop 
+            include ../navigation/catalog-nav
+            .header-actions
+                include ../search/search
+                a(href="").header-phone-mobile.header-main__mobile-phone
+                    +icon('phone', 'header-phone-mobile__icon')
+                .order-callback.header-main__order-callback
+                    span.order-callback__description Call 24/6 
+                    a(href="tel:+77777777777").order-callback__phone +7 777 777-77-77
+                    a(href="#popup-consultation").order-callback__link.link-white.link-underline.popup-link Call
+                include ../basket/basket-prev
+
+//                .search.header-main__search
+//                    input(placeholder="Search product" type="search").input-field.input-field--size-s
+//                    +icon('search', 'search__icon')
+                

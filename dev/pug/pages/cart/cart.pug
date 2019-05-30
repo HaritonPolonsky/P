@@ -1,0 +1,80 @@
+include ../../modules/small-blocks/breadcrumbs
+section.s-cart
+    .container
+        +sectionHeader("Cart", "", "center")
+        .cart-inner
+            div(class="cart"+"-table table")
+                +tableHeader("cart", "table-block--white ")
+                    +tableRowColumn("cart", "header", "Name", "Count", "Price", "Total price", "")
+                .cart-table__body.table__body.table-block--white
+
+
+                    .table__products-prev
+                        each n in [1, 2, 3, 4, 5, 6]
+                            .item-prev.table-prev.cart-prev
+                                a(href="").table-prev__header.cart-prev__header
+                                    img(src="static/images/content/products/prev-"+n+".jpg" alt="product").pre-img.product-prev__img
+                                .table-prev__body.cart-prev__body
+                                    +title("product-prev","Solgar, Ubiquinol (Reduced CoQ10), 100 mg, 50 Softgels", "")
+                                        ul.product-prev__info--list.table-prev__info--list
+                                            +list2span("product-prev__info","Code", "829835006540")
+                                    ul.table-prev__info--list.cart-prev__info--list.cart-prev__info--column
+                                        .product-prev__quantity.table-prev__quantity
+                                            +quantity()
+                                        li.table-prev__price.price.product-prev__info 
+                                            +priceSale("", 80, 60)
+                                        li.table-prev__price.price.product-prev__info
+                                            +priceSale("", "", 80) 
+                                        li.table-prev__icon.cart-prev__icon.remove-order
+                                            +icon("trash", "cart-prev__icon--delete")
+                                    .tablet
+                                        ul.table-prev__info--list.cart-prev__info--list.table-prev__info--line
+                                            li.table-prev__price.price.product-prev__info 
+                                                span(class="product-prev__info-label") Price
+                                                +priceSale("", 80, 60)
+                                            li.table-prev__price.price.product-prev__info 
+                                                span(class="product-prev__info-label") Price
+                                                +priceSale("", "", 80) 
+                                        
+
+                    .table__products-prev--footer.cart-prev--footer
+                        
+                        include ../../modules/small-blocks/delivery
+                                                
+                        
+                        .table-prev--total.cart-prev--total  
+                            .table-prev__cell-wrap
+                                .table-prev__cell.table-prev__cell--emp
+                                .table-prev__cell
+                                    span.table-prev__cell--label Price
+                                .table-prev__cell
+                                    span.table-prev__cell--value 123
+                        
+                            .table-prev__cell-wrap
+                                .table-prev__cell.table-prev__cell--emp
+                                .table-prev__cell
+                                    span.table-prev__cell--label Delivery
+                                .table-prev__cell
+                                    span.table-prev__cell--value 123
+                            .table-prev__cell-wrap
+                                .table-prev__cell.table-prev__cell--emp
+                                .table-prev__cell
+                                    span.table-prev__cell--label.price-sale__label Sale
+                                .table-prev__cell.price--sale
+                                    span.table-prev__cell--value.price-sale__value -10$
+                            .table-prev__cell-wrap
+                                .table-prev__cell.table-prev__cell--emp
+                                .table-prev__cell
+                                    span.table-prev__cell--label Price
+                                .table-prev__cell.price
+                                    +priceSale("", "", 80)
+                            
+                                
+                            .table-prev__cell-wrap
+                                .table-prev__cell.table-prev__cell--emp
+                                .table-prev__cell.table-prev__cell--m
+                                    span.table-prev__cell--label.text-descr Price as of September 7 2018
+                            .table-prev__cell-wrap
+                                .table-prev__cell.table-prev__cell--emp
+                                .table-prev__cell.table-prev__cell--m
+                                    +btn(" btn--fill btn-order", "Order", "")

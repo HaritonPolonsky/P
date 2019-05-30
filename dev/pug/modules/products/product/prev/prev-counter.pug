@@ -1,0 +1,16 @@
+.item-prev.product-prev
+    a(href="").item-prev__header
+        .product-prev__marks.marks
+            .product-prev__mark.mark--yellow -30%
+        img(src="static/images/content/products/prev-"+n+++".jpg" alt="product").pre-img.product-prev__img
+    a(href="").product-prev__body
+        +title("product-prev","Solgar, Ubiquinol (Reduced CoQ10), 100 mg, 50 Softgels", "1234")
+        ul.product-prev__info--list
+            +list2span("product-prev__info","Code", "829835006540")
+            +list2span("product-prev__info","Expiration Date", "January 2020")
+            li.product-prev__price.price
+                +priceSale("", 80, 60)      
+    .product-prev__footer
+        button.btn.btn--fill
+            +icon('shopping-cart', 'btn__icon')
+            span Add to cart

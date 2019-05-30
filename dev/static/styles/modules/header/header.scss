@@ -1,0 +1,121 @@
+.header {
+    .container {
+        @extend %FlexAlignItemsCenter;
+    }
+    &-top {
+        
+        @media screen and (max-width: $phone-size) { 
+            display: none;
+        }
+        &__user-nav {
+            margin-left: auto;
+        }
+        &__location {
+            margin-right: 80px;
+            @media screen and (max-width: $tablet-size) {
+                margin-right: 40px;
+            }
+        }
+        padding: 12px 0;
+    }
+    &-actions {
+        @extend %FlexAlignItemsCenter;
+        @include orderInM($tablet-size, 3);
+        @media screen and (max-width: $phone-size) { 
+            margin-left: auto;
+        }
+        & > * {
+            &:not(:last-child) {
+                margin-right: 40px;
+
+                @media screen and (max-width: $tablet-size) {
+                    margin-right: 30px;
+                }
+                @media screen and (max-width: $phone-size) { 
+                    margin-right: 15px;
+                }
+            }
+        }
+    }
+    &-main {
+        background-color: $dark-bg;
+        color: white;
+        padding: 20px 0;
+        @media screen and (max-width: $phone-size) { 
+            padding: 13px 0;
+        }
+        .container {
+            position: relative;
+            @extend %FlexAlignItemsCenter;
+            & > * {
+                &:not(:last-child) {
+                    margin-right: 40px;
+
+                    @media screen and (max-width: $tablet-size) {
+                        margin-right: 30px;
+                    }
+                }
+            }
+        }
+
+        &__basket-prev {
+            margin-left: auto;
+            @include orderInM($tablet-size, 3);//3
+            @media screen and (max-width: $tablet-size) {
+                margin-left: 0;
+                margin-right: 30px;
+            }
+            @media screen and (max-width: $phone-size) {
+                margin-right: 0;
+            }
+        }
+        &__search {
+           @include orderInM($tablet-size, 1); 
+        }
+        &__mobile-phone {
+            @include orderInM($phone-size, 2); 
+        }
+        &__order-callback {
+           @include orderInM($tablet-size, 3);
+           @media screen and (max-width: $tablet-size) {
+               margin-right: 0;
+           }
+           @media screen and (max-width: $phone-size) { 
+               display: none;
+           }
+        }
+        &__catalog-nav {
+           @include orderInM($tablet-size, 2);  
+        }
+    }
+    .logo {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        @include orderInM($tablet-size, 1);
+        @media screen and (max-width: $phone-size) { 
+            display: none;
+        }
+        &__img {
+            height: 50px;
+            width: 50px;
+        }
+        &__text {
+            padding-left: 5px;    
+        }
+
+    }
+    &-phone-mobile {
+        display: none;
+        @media screen and (max-width: $phone-size) { 
+            display: block;
+            &__icon {
+                @include size(24px);
+                fill: $main-action-color;
+        }
+        }
+        
+    }
+}
+
+

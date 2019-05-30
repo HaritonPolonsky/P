@@ -1,0 +1,121 @@
+.s {
+    &-bg-white {
+        background-color: $white;
+    }
+    &-wrap {
+        padding: 0;
+    }
+    &-popular-categories, &-catalog-categories {
+        padding-bottom: 10px;
+    }
+    
+    &-bestsellers {
+        padding-bottom: 20px;
+    }
+    &-border {
+        border-top: 1px solid $main-border-color;
+        border-bottom: 1px solid $main-border-color;
+        
+    }
+    &-main-tabs {
+        width: 100%;
+    }
+/*    &-actions {
+        .container {
+            @media screen and (max-width: $phone-size) {
+                padding: 0;
+            
+        }
+        }
+    }*/
+/*    &-categories-list {
+         .container {
+        @media screen and (max-width: $phone-size) {
+            display: none;
+        }
+        }
+    }*/
+    &-questions {
+        padding: 10px 0;
+    }
+/*    &-search-results {
+        .s-popular-searching {
+            display: none;
+            @media screen and (max-width: $phone-size) {
+            display: block;
+        }
+            
+        }
+    }*/
+}
+
+.section-mobile-footer {
+    display: none;
+    text-align: center;
+    //margin-top: 20px;
+    margin-top: 10px;
+    @media screen and (max-width: $phone-size) {
+        display: block;
+        
+        }
+    
+}
+.section {
+    padding: 40px 30px;
+    &-bg {
+        &--white {
+           background-color: $white; 
+        }
+    }
+}
+.section-header {
+    display: flex;
+    align-items: baseline;
+    
+    margin-bottom: 30px;
+    & > * {
+        &:not(:last-child) {
+        @media screen and (max-width: $phone-size) {
+            margin-bottom: 10px;
+            
+        }
+        }
+    }
+    &.center {
+        align-items: center;
+    }
+    @media screen and (max-width: $phone-size) {
+            display: block;
+        }
+    &__right {
+        margin-left: auto;
+        @media screen and (max-width: $phone-size) {
+            display:none;
+        }
+    }
+    &.section-header--search {
+        margin-top: 20px;
+    }
+    
+    .status {
+        margin-left: 10px;
+        @media screen and (max-width: $phone-size) {
+             margin-left: 0;
+        }
+        
+    }
+/*    &__link {
+        font-family: $medium-font;
+    }*/
+    
+}
+.section-main {
+    padding: 0 30px;
+}
+/*.section-main-tabs {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    width: 100%;
+    }*/

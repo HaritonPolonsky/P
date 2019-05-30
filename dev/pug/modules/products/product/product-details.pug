@@ -1,0 +1,15 @@
+section.s-product-details.s-bg-white#s-product-details
+  .container
+    +sectionHeaderSubtitle("Product details", "")
+    .product-details.details
+        each n in [1, 2]
+            .product-details__item.details__item
+                span.product-details__title.details__title Suplement Facts
+                each v in [["chicory", "seed"], ["caper bush", "root"], ["chicory", "seed"], ["caper bush", "root"], ["yarrow", "aerial parts"], ["black nightshade", "whole plant"], ["arjuna", "bark"], ["Cassia occidentalis","seed"], ["yarrow", "aerial parts"], ["tamarisk", "whole plant"], ["black nightshade", "whole plant"], ["Cassia occidentalis", "seed"], ["tamarisk","whole plan"]]
+                    +details(v, "product-details", "")
+//                    .product-details__line.details__line
+//                        .product-details__label.details__label
+//                            span.product-details__label-text.details__label-text=v[0]
+//                        .product-details__value.details__value
+//                            span.product-details__text.details__text=v[1]
+

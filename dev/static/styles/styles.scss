@@ -1,0 +1,130 @@
+@import "utils/libs";
+@import "utils/vars";
+@import "utils/mixins";
+@import "utils/fonts";
+
+html {
+  font-size: $base-font-size;
+  height: 100%;
+  &.fixed {
+      height: 100%;
+      overflow: hidden;
+      position: fixed;
+      width: 100%;
+      body {
+          height: 100%;
+          overflow: hidden;
+          position: fixed;
+          width: 100%;
+          
+      }
+  }
+}
+
+body { 
+    background-color: $main-bg;
+    color: $base-text;
+    font-family: $main-font;
+    height: 100%;
+    &.fixed {
+        overflow: hidden;
+    }
+    &.magnificpopupnoscroll {
+        overflow-y: hidden !important;
+    }
+
+}
+
+h1, h2, h3, h4, h5, h6 { margin: 0; }
+
+ul, li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a { 
+    color: $base-text;
+    text-decoration: none;
+}
+
+p { margin: 0; }
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video,
+textarea { vertical-align: middle; }
+
+textarea { resize: none; }
+
+section { 
+    position: relative;
+    padding: 40px 0;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video, 
+textarea
+input,
+select,
+button { 
+    outline: none;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video, 
+textarea {
+    vertical-align: middle;
+}
+input[type=text],
+input[type=submit],
+input[type=search],
+textarea {
+    -webkit-appearance: none;
+}
+
+
+*, *:before, *:after { 
+    box-sizing: border-box; 
+    outline: none;
+
+}
+
+.wrapper {
+  @extend %FlexColumn;
+  height: 100%;
+}
+
+.content { flex: 1 0 auto; }
+
+.container {
+  margin: 0 auto;
+  max-width: $content-size;
+  padding: 0 80px;
+  width: 100%;
+  @media screen and (max-width: $tablet-size) {
+      padding: 0 20px;
+  }
+  &--inside {
+    margin: 0 auto;
+/*    max-width: $content-size;
+    padding: 0 80px;*/
+    width: 100%;
+        }
+}
+
+//Модули
+@import "modules/modules";
+
+

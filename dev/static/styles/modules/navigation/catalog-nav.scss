@@ -1,0 +1,332 @@
+.catalog-nav {
+/*    &.is-active {
+        .catalog-nav__body {
+            display: block;
+        }
+
+    }*/
+    &__header {
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+        cursor: pointer;
+        & > * {
+            &:not(last-child) {
+                margin-right: 10px;
+            }
+        }
+        .sandwich {
+            @media screen and (max-width: $phone-size) { 
+                display: none;
+            }
+        }
+    }
+    &__body {
+        background-color: $white;
+        @extend %mainBorderRadius;
+        @extend %boxShadow;
+        display: none;
+        color: $base-text;
+        z-index: 1;
+        top: calc(100% - 5px);
+        left: 80px;
+        position: absolute;
+        @media screen and (max-width: $tablet-size) {
+            left: 20px;
+            max-width: 708px;//max-width: 728px;
+            //background-color: pink;
+        }
+        @media screen and (max-width: $phone-size) {
+            position: fixed;
+            bottom: 0;
+            border-radius: 0;
+            border: 1px solid $main-action-color;
+            background-color: $main-action-color;
+            top: 50px;
+            left: 0;
+            width: 100%;
+            max-width: 100%;
+            overflow: auto;
+        }
+        &.is-active {
+            display: block;
+            &.catalog-nav__title {
+                @media screen and (max-width: $phone-size){
+                    &-mobile {
+                        &:before {
+                            display: block;
+                        }
+                    }
+                }
+            }
+            
+            
+            
+        }
+        &:before {
+            @include triangleTop(202px, -10px, 10px, #ffffff);
+            @media screen and (max-width: $tablet-size) {
+                @include triangleTop(220px, -10px, 10px, #ffffff); 
+            }
+            @media screen and (max-width: $phone-size) {
+                display: none;
+            }
+            /*            position: absolute;
+                        content: '';
+                        top: -10px;
+                        left: 202px;
+                        width: 0;
+                        height: 0;
+                        border-style: solid;
+                        border-width: 0 10px 10px 10px;
+                        border-color: transparent transparent #ffffff transparent;*/
+        }
+        /*        &:hover {
+                    border-radius: 4px 0px 0px 4px;
+                    box-shadow: 0 0 5px 3px rgba(159, 197, 178, 0.5);
+                }*/
+
+    }
+    &__link {
+        @extend %FlexAlignItemsCenter;
+        padding: 7px 25px 7px 15px;
+        cursor: pointer;
+        position: relative;
+        transition: all linear .2s;
+        @media screen and (max-width: $phone-size) {
+                border-bottom: 1px solid rgba(159, 197, 178, 0.5);
+        }
+        &:hover {
+            background-color: $main-action-color;
+        }
+        &:after {
+            //content: "";
+            //position: absolute;
+            @include triangleRight(5px, 10px, 20px, $base-text)
+/*            top: 10px;
+            right: 20px;*/
+            //width: 0;
+            //height: 0;
+            //border-style: solid;
+/*            border-width: 5px 0 5px 5px;
+            border-color: transparent transparent transparent #000333;*/
+            @media screen and (max-width: $phone-size) {
+                transform: rotate(90deg);
+        }
+        }
+        & > * {
+            @include notLastChild(20px);
+        }
+        &-text {
+            font-size: 14px;
+            line-height: 18px;
+            font-family: $medium-font;
+            @media screen and (max-width: $phone-size) {
+            font-size: 16px;
+            line-height: 1.63;
+        }
+            
+        }
+    }
+    &__list {
+        position: relative;
+        width: 255px;
+        @media screen and (max-width: $phone-size) {
+            width: 100%;
+        }
+    }
+    &__item {
+        @media screen and (max-width: $phone-size) {
+            background-color: $main-action-color;
+        }
+        &:first-child {
+            border-radius: 4px 4px 0px 0px;
+            overflow: hidden;
+        }
+        &:last-child {
+            border-radius: 0 0 4px 4px;
+            overflow: hidden;
+        }
+
+        &:first-child, &:last-child {
+            @media screen and (max-width: $phone-size) {
+                border-radius: 0;
+            }
+        }
+        &.catalog-nav__item--active {
+            .catalog-subnav {
+                @media screen and (max-width: $phone-size) { 
+                    display: block;
+                }
+            }
+        }
+/*        .catalog-subnav {
+                display: block;
+            }*/
+        &:hover {
+            @media screen and (min-width: $phone-size) {
+            .catalog-subnav {
+                display: block;
+           
+            }
+            }
+        }
+        
+        
+    }
+    &__title {
+        @media screen and (max-width: $phone-size) { 
+            display: none;
+        }
+        &-mobile {
+            display: none;
+            padding-right: 20px;
+            position: relative;
+            @media screen and (max-width: $phone-size) { 
+                display: block;
+            }
+            &:after {
+                @include triangleBottom(0, 0px , 5px, #ffffff);
+                top: 8px;
+            }
+/*            &:before {
+                content: "";
+                background-image: url("static/images/svg/symbol/sprite.svg#close");
+                background-repeat: no-repeat;
+                display: block;
+                position: absolute;
+                right: 0;
+                top: 3px;
+                width: 12px;
+                background-color: red;
+            }*/
+            
+        }
+    }
+
+
+}
+.catalog-subnav {
+    background-color: $white;
+    border-left: 1px solid $main-action-color;
+    border-radius: 0px 4px 4px 0px;
+    bottom: 0px;
+    //box-shadow: 4px 0 5px 0 rgba(159, 197, 178, 0.5);
+    //box-shadow: 0 0 5px 0 rgba(159, 197, 178, 0.5);
+    display: none;
+    //display: block;
+    left: calc(100% - 2px);
+
+    padding: 15px 20px 0px;
+    position: absolute;
+    top: 0px;
+    width: 670px;
+    @media screen and (max-width: $tablet-size) {
+        width: 453px;//width: 473px;
+    }
+    @media screen and (max-width: $phone-size) { 
+        width: 100%;
+        position: static;
+        padding: 0;
+        //overflow: auto;
+       
+            }
+    .simplebar-vertical {
+        margin: 10px 10px 10px 0px;
+        @media screen and (max-width: $phone-size) { 
+                margin: 0px;
+            }
+    }
+    &__link {
+        //background-color: rebeccapurple;
+        display: block;
+    }
+    &__inner {
+        display: flex;
+        @media screen and (max-width: $phone-size) { 
+                display: block;
+                
+                
+            }
+        & > * {
+            @include notLastChild(30px);
+            @media screen and (max-width: $phone-size) { 
+                @include notLastChild(0);
+                //overflow: auto;
+                
+            }
+        }
+
+    }
+
+    &__col {
+        flex: 1;
+        
+        & > * {
+            @include marginInChildren(30px, 0, 0, 0);
+            
+            
+            @media screen and (max-width: $phone-size) { 
+                margin: 0;
+                //overflow: auto;
+            }
+            
+        }
+    }
+    &__header {
+        margin-bottom: 10px;
+        @media screen and (max-width: $phone-size) {
+            border-bottom: 1px solid $main-action-color;
+            padding: 5px 40px 5px 15px;
+            position: relative;
+            display: block;
+            margin-bottom: 0;
+            &:after {
+               @include triangleRight(5px, 10px, 20px, #000333)
+               transform: rotate(90deg);
+            }
+        }
+    }
+    &__block {
+        @media screen and (max-width: $phone-size) {
+            &--active {
+               .catalog-subnav__list {
+                display: block;
+            } 
+            }
+            
+        }
+    }
+    &__title {
+        font-family: $bold-font;
+        font-size: 18px;
+        line-height: 26px;
+        @media screen and (max-width: $phone-size) {
+            font-size: 14px;
+            line-height: 1.86;
+        }
+        
+
+
+    }
+    &__list {
+        @media screen and (max-width: $phone-size) {
+            display: none;
+        }
+        & > * {
+            margin: 10px 0;
+        }
+    }
+    &__item {
+        font-family: $medium-font;
+        font-size: 14px;
+        line-height: 18px;
+        @media screen and (max-width: $phone-size) {
+            border-bottom: 1px solid $main-action-color;
+            line-height: 1.86;
+            padding: 5px 25px;
+        }
+    }
+}
+
+

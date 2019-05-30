@@ -1,0 +1,238 @@
+.location {
+    flex: 0 0 $locationWidth;
+    width: $locationWidth;
+    max-width: $locationWidth;
+    position: relative;
+    
+    &__body {
+        
+        &.is-location-selected {
+            //@media screen and (max-width: $phone-size) { 
+              @extend %popupBackB; 
+/*               position: fixed;
+               bottom: 0;
+               left: 0;
+               
+               z-index: 3;
+               background-color: rgba($dark-bg, .3);
+               right: 0;
+               top: 0;*/
+
+          // }
+            .location-selected {
+                display: flex;
+                flex-direction: column;
+                
+                
+            }
+        }
+    }
+    &__header {
+        @extend %FlexAlignItemsCenter;
+        cursor: pointer;
+        position: relative;
+        & > * {
+            &:not(last-child) {
+                margin-right: 10px;
+            }
+        }
+    }
+    &-mobile {
+        
+        .location {
+            &__current {
+                //color: $link-color;
+                &:after {
+                    display: none;
+                }
+            }
+        }
+        &__body {
+            color: $base-text;
+        }
+        
+        
+        
+        
+    }
+    &__icon {
+        @include size(16px);
+        fill: $base-text;
+        flex-shrink: 0;
+    }
+    &__current {
+        //@extend %FlexAlignItemsCenter;
+        display: block;
+        overflow: hidden;
+        //position: relative;
+        padding-right: 10px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        
+        
+           &:after{
+            @include triangleBottom(0px, 0, 5px, #333333);
+            margin-left: 10px;
+            z-index: 1;
+            top: 6px;
+        } 
+        
+        
+    }
+    &-question, &-selected {
+        position: absolute;
+        background-color: $white;
+        z-index: 1;
+        @extend %mainBorderRadius;
+    }
+    &-question {
+        @extend %FlexAlignItemsCenter;
+        @extend %boxShadow;
+
+        left: 0;
+        top: calc(100% + 10px);
+
+        padding: 5px 10px;
+        @media screen and (max-width: $tablet-size) {
+            max-width: 728px;
+        }
+        @media screen and (max-width: $phone-size) {
+            position: fixed;
+            flex-direction: column;
+            bottom: 0;
+            border: 2px solid $main-action-color;
+            padding: 10px 20px 20px;
+            max-width: 100%;
+            right: 0;
+            top: auto;
+        }
+        & > * {
+            @include notLastChild(15px);
+            &:not(:last-child){
+                @media screen and (max-width: $phone-size) {
+                    margin-right: 0;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+        &:before {
+            @include triangleTop(20px, -10px, 10px, #ffffff);
+            @media screen and (max-width: $phone-size) {
+                display: none;
+            }
+            /*            position: absolute;
+                        content: '';
+                        top: -10px;
+                        left: 20px;//
+                        width: 0;
+                        height: 0;
+                        border-style: solid;
+                        border-width: 0 10px 10px 10px;
+                        border-color: transparent transparent #ffffff transparent;*/
+        }
+        &__buttons {    
+            @extend %FlexAlignItemsCenter;
+            & > * {
+                @include notLastChild(10px);
+                white-space: nowrap;
+            }
+
+        }
+        &__text {
+            font-size: 18px;
+            line-height: 1.44;
+            font-family: $main-font;
+            white-space: nowrap;
+            @media screen and (max-width: $tablet-size) {
+                display: block;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            @media screen and (max-width: $phone-size) {
+            white-space: normal;
+        }
+        }
+    }
+    &-selected {
+        border: $main-border $main-action-color;
+        box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
+        display: none;
+        left: 20px;
+        top: 10px;
+        width: 210px;
+        @media screen and (max-width: $phone-size) {
+            width: 95%;//width: auto;
+            top: 60px;
+            right: 20px;
+            bottom: 30px;
+        }
+        
+        &__body {
+/*            display: flex;
+            flex-direction: column;
+            height: auto;
+            overflow: auto;*/
+            
+            max-height: 260px;
+/*            position: relative;*/
+            @media screen and (max-width: $phone-size) {
+                //height: 100%;
+                max-height: 100%;
+            }
+            &:before {
+                @include linearGradient(bottom);
+                top: 0px;
+
+            }
+            &:after {
+                @include linearGradient(top);
+                bottom: 0;
+            }
+
+        }
+        &__header {
+            /*border-bottom: $main-border $main-action-color;*/
+        }
+        &__close {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            position: absolute;
+            right: 0;
+            top: -20px;//-30
+            @media screen and (max-width: $phone-size) {
+                display: flex;
+                
+            }
+            &-icon {
+                @include size(16px);
+                fill: $main-action-color;
+            }
+            
+        }
+        &__item {
+/*            cursor: pointer;
+            font-family: $medium-font;
+            font-size: 14px;
+            line-height: 18px;
+            color: $base-text;
+            padding: 5px 15px;
+            transition: $main-transition .2s;
+            &:hover {
+                background-color: $main-action-color;
+            }*/
+
+        }
+        &__list {
+            //height: 100%;
+            overflow: auto;
+            padding: 15px 0;
+            
+        }
+/*        &__wrap {
+           
+        }*/
+    }
+    
+}

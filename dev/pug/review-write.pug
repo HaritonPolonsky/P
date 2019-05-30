@@ -1,0 +1,11 @@
+extends template/main
+
+block variables
+    - var title = 'Review write'
+    - var pageClass = 'review-write-page'
+
+
+block content
+    include pages/review-write/review-write
+    include modules/products/viewed-products
+    include modules/small-blocks/questions

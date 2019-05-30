@@ -1,0 +1,52 @@
+section.s-wrap.s-bg-white
+    include ../../modules/small-blocks/breadcrumbs
+section.s-action-one.s-bg-white
+    .container
+        +sectionHeaderSmall("Action", "", "", "")
+        .action-one
+            .action__header
+                span.action__subtitle.subtitle Natural Remedies for Joint Pain
+                .action__info
+                    .action-date
+                        span.action-date__text 1 april to 1 may
+                    +divIconSpan("actions-item" + "__icon","hourglass","actions-item__icon","end In 6 Days 22 Hours ")
+            
+            .action__body.static
+                .static-item
+                    span.static-subtitle.subtitle By Ellen Albertson
+                    +blockTitleContentPlist("", 
+                            "If you suffer from joint pain you’re not alone. According to a National Health Interview Survey over a 30-day period, 30 percent of adults experienced pain, aching or stiffness in or around a joint. The Centers for Disease Control and Prevention estimates that 54.4 million American adults—about 15 percent of the population—suffer from arthritis, the inflammation of one or more joints.",
+                            "Joints, the physical point of connection between bones, provide support and generally facilitate movement. There are 360 joints in the body, most of which are movable. When healthy, bones within a joint glide smoothly past each other because their surfaces are covered with a smooth layer of cartilage and a membrane that secretes a lubricating liquid called synovial fluid.",
+                            "Dysfunction and pain occur when either synovial fluid doesn’t secrete properly or the cartilage covering bones deteriorates. Damage can happen suddenly or gradually and may be caused by diseases or injury. The pain and swelling can be acute or chronic and range from mild to severe.",
+                            "Osteoarthritis, the deterioration of the cartilage that covers the ends of the bones (especially in the knees and hips) that frequently occurs as a natural part of aging, is the most common cause of joint pain. Rheumatoid arthritis, an autoimmune disease in which the body’s immune system attacks the membranes that secrete synovial fluid, is another common cause of joint pain along with gout, lupus and fibromyalgia.",
+                            "While your first line of defense may be over-the-counter pain medication (ibuprofen, acetaminophen or aspirin), such products can have serious side effects, like kidney damage. Fortunately, there are numerous natural ways to reduce inflammation and alleviate the discomfort caused by joint pain."
+                                             )
+                    +blockTitleContentPlist("Go Mediterranean",  "If the cause of your pain is rheumatoid arthritis, eating an anti-inflammatory or Mediterranean diet may help reduce your symptoms while improving heart health and reducing cancer risk. This type of diet entails eating antioxidant-rich fruits and vegetables; beans; whole grains like brown rice and quinoa (which have been shown to lower C-reactive protein, a marker for inflammation); and foods high in omega-3 fatty acids such as fatty fish, chia seeds, flax seeds and walnuts. Using olive oil and cutting back on processed carbohydrates, saturated fats and trans fats can also reduce inflammation.",
+
+                            "You can also take an antioxidant and/or an omega-3 fatty acid (look for one high in DHA) supplement and consume more flavonoids, chemical compounds found in soy products, green tea and broccoli.",
+
+                            "In addition, if you are overweight, losing weight can reduce the stress on your joints, which can decrease future damage as well as daily pain, especially in your hips, knees and feet.")
+
+section.s-action-products.s-bg-white.s-border
+    .container
+        +sectionHeader("Action goods", "", "")
+        - var n = 1;
+        - var l = 1;
+        .action-products-wrap
+            .action-products-item
+                .action-products-item__header
+                    span.action-products-item__title.subtitle Products in action in category
+                .products-prev-line
+                    while n < 5
+                        +prev(n++)
+                .action-products-item__footer
+                    +btn("", "All items in action", "123")
+            .action-products-item
+                .action-products-item__header
+                    span.action-products-item__title.subtitle  Products in action in category
+                .products-prev-line
+                    while l < 5
+                        +prev(l++)
+                .action-products-item__footer
+                    +btn("", "All items in action", "123")
+        

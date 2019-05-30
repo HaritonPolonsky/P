@@ -1,0 +1,10 @@
+extends template/main
+
+block variables
+    - var title = 'Contacts'
+    - var pageClass = 'contacts-page'
+
+block content
+    include pages/contacts/contacts
+    include modules/products/viewed-products
+    include modules/small-blocks/questions

@@ -1,0 +1,94 @@
+mixin call(className)
+    - var cN = className+"__order-callback"
+    div(class="order-callback "+cN)
+        span.order-callback__description Call 24/6 
+        a(href="tel:+77777777777").order-callback__phone +7 777 777-77-77
+        a(href="").order-callback__link.link-white.link-underline Call
+        
+
+//mixin listLinkSpan(link, linkText, text)
+//    li.footer-nav__item
+//        a(href=link).footer-nav__link=linkText
+//        if(text)
+//            span.footer-nav__text=text
+            
+mixin listLinkSpan(classNav, link, linkText, text)
+    - var cN = classNav+"-nav"
+    li(class=cN+"__item")
+        a(href=link)(class=cN+"__link")=linkText
+        if(text)
+            span(class=cN+"__text")=text
+  
+mixin liImgSpanSpan(className, img, alt, label, value)
+    li(class=className)
+        img(src="static/images/content/"+img+".jpg" alt=alt)(class=className+"__img")
+        span(class=className+"-label")=label
+        span(class=className+"-value")=value
+
+mixin details(value,className, valueClass)
+    div(class=className+"__line details__line")
+        div(class=className+"__label details__label")
+            span(class=className+"__label-text details__label-text")=value[0]
+        div(class=className+"__value details__value")
+            span(class=className+"__value-text.details__value-text "+valueClass)=value[1]
+        if(value[2] !=="")
+            div(class=className+"__link details__link")
+               a(href=value[3]).link.link-green.link-underline=value[2]
+
+mixin navHeader(className)
+    ul(class=className+"-nav__list")
+        +listLinkSpan(className, "", "Payment and delivery", "")
+        +listLinkSpan(className, "", "Warranty", "")
+        +listLinkSpan(className, "", "Services", "")
+        +listLinkSpan(className, "", "Company", "")
+        +listLinkSpan(className, "contacts.html", "Contacts", "")
+        if(block)
+            block
+            
+mixin contactsListIcons(className)
+    div(class="contacts-icons__list "+className)
+        +contactsIcon("phone", "Call", "tel:+1234567890", "+1234567890")
+                        a(href="").link-underline Dial by QR code
+
+        +contactsIcon("mail", "Email", "mailto:question@mail.com", "question@mail.com")
+
+mixin contacts(className, close, title, text, label, ...value)
+    div(class=className+"__info")
+        if(close !== "")
+            .contacts-popup__close
+                +icon('close', 'contacts-popup__close-icon')
+        span(class=className+"__title")= title
+        span(class=className+"__text")= text
+        div(class=className+"__block")
+            span(class=className+"__label")= label 
+            each v in value
+                span(class=className+"__text")=v
+
+
+
+mixin sliderNavNavigation(className, iconClass)
+    div(class="slider__nav slider__nav--next "+className+"--next")
+        +icon('left', 'slider__nav__icon '+iconClass+"icon--left")
+    div(class="slider__nav slider__nav--prev "+className+"--prev")
+        +icon('right', 'slider__nav__icon '+iconClass+"icon--prev")         
+
+mixin video(title, link, linkImg, linkClass, iconName)
+    .video-item
+        h3.title--small=title
+        a(href=link style="background-image:url('static/images/content/video/"+linkImg+".jpg')")(class="popup-link video__content " + linkClass)
+            +icon(iconName, 'video__icon')
+
+
+
+
+mixin divIconSpan(className, iconName, iconClass, text)
+    div(class=className+"-block")
+        +icon(iconName, iconClass)
+        span(class=className+"-text")=text
+    if(block)
+        block
+
+mixin sectionRight(text, c, link)
+    div(class="section-header__right")
+        +linkText("link-green link-underline", link, text)
+        +countText(c, "")

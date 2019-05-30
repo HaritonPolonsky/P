@@ -1,0 +1,17 @@
+.product-prev
+    a(href="").product-prev__header
+        .product-prev__marks.marks
+            .product-prev__mark.mark--yellow -30%
+            .product-prev__markgreen.mark--green Bestseller
+        img(src="static/images/content/products/prev-5.jpg" alt="product").product-prev__img
+    a(href="").product-prev__body
+        +title("product-prev","Reviva Labs, Vitamin E Stick, 1/7 oz. (4.0 g)", "1234")
+        ul.product-prev__info--list
+            +list2span("product-prev__info","Code", "829835006540")
+            +list2span("product-prev__info","Expiration Date", "January 2020")
+            li.product-prev__price.price
+                +priceSale("", 80, 60)      
+    .product-prev__footer
+        button.btn.btn--fill
+            +icon('shopping-cart', 'btn__icon')
+            span Add to cart

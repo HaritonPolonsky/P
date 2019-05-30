@@ -1,0 +1,10 @@
+extends template/main
+
+block variables
+    - var title = 'About'
+    - var pageClass = 'about-page'
+
+block content
+    include pages/about/about
+    include modules/products/viewed-products
+    include modules/small-blocks/questions

@@ -1,0 +1,13 @@
+nav.questions-nav
+    ul.questions-nav__list
+        - var list = 0;
+        while list < 3
+            - var column = 0;
+            +liDivSpanTextDiv("questions", "-nav", "dose it have alcohol ? is it Kosher? "+list, "", list++, "123")
+                //.catalog-subnav(data-simplebar)
+                .questions-subnav
+
+                    - var block = 0;
+
+                    while block < 2
+                        +blockHedearTitle("questions", "-subnav", "", "No Alcohol in formula I am sorry I do not know if it is kosher. "+column+list+block++, "")

@@ -1,0 +1,119 @@
+.tab {
+    display: none;
+    &.tab--active {
+        display: block;
+    }
+}
+.tabs {
+
+    &-main {
+        border-bottom: 1px solid $main-border-color;
+        display: flex;
+        
+        & > * {
+           //padding: 15px 20px;
+           &:first-child {
+               padding-left: 0;
+           }
+           &:last-child {
+               padding-right: 0;
+           }
+        }
+        &__item {
+            &.tabs-list__item--active {
+                .tabs-main__text--wrap {
+                    border-bottom: 3px solid $main-action-color;
+                    font-family: $medium-font; 
+                }
+            }
+        }
+        
+        &__text {
+            &--wrap {
+            padding-bottom: 15px;
+            
+            }
+            
+        }
+
+    }
+
+    &-wrap--mobile {
+            display: none;
+        @media screen and (max-width: $phone-size) {
+            display: block;
+            flex: 1; 
+            width: auto;
+            position: relative;
+            max-width: 100%;
+ 
+        
+        
+        .tab {
+            @media screen and (max-width: $phone-size) {
+            position: absolute;
+            left: 0;
+            right: 0;
+            z-index: 10;
+            top: 100%;
+            
+            }
+            &.tab-searching {
+                .category__list {
+                    & > * {
+                    &:last-child {
+                       display: none;
+                    }
+                    }
+                }
+            }
+            &.tab-filter {
+                .filter__header {
+               @media screen and (max-width: $phone-size) { 
+                  display: none;
+               }
+                }
+                .filter {
+                    @media screen and (max-width: $phone-size) { 
+                  border-radius: 0 0 4px 4px;
+               }
+                }
+            }
+        }
+        .tabs-content {
+           
+/*            & > * {
+            margin: 20px 0;
+            &:first-child {
+                margin-top: 0;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }*/
+        
+        }
+    
+        
+        &.tabs-include {
+            position: static;
+            
+            .catalog-mobile-nav--active {
+            border-radius: 0;
+            border-bottom: none;
+        }
+        .tab-filter {
+            top: 96%;
+            border-top: 1px solid #ededed
+        }
+        .catalog-mobile-nav__item {
+            width: 100%;
+            padding: 15px 10px;
+            &.tabs-list__item--active {
+                background-color: transparent;
+            }
+        }
+        }
+    }
+    }
+}

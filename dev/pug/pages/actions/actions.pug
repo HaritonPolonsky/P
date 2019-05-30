@@ -1,0 +1,57 @@
+include ../../modules/small-blocks/breadcrumbs
+section.s-actions
+    .container
+        +sectionHeader("Promotions and discounts", "")
+        .actions-wrap
+            +blockHeaderSmall("actions-block", "title--center", "Actions", "", "In", [[2018]], [[2017]], [[2016]], [[2015]], [[2014]] )
+                div(class="actions-block__body")
+                    each s in [1, 2, 3]
+                        +divLinkImage("actions-item", "products/prev-"+s+".jpg", "")
+                            +linkContentTitle("actions-item", "On-sale products", "Loyalty credit is 10% of the value of \n\
+                                                                                your order after discounts and credits are \n\
+                                                                                applied, excluding shipping charges.\n\
+                                                                                 This credit is applied as soon as your current \n\
+                                                                                order ships, and is valid for up to 60 days \n\
+                                                                                from the date of your most recent purchase. ",
+                                                                                "end In "+s+" Days 22 Hours ", "")
+
+                                +divMarkIcon("actions-item", "mark--icon mark--present mark--green-light", "present", "actions-item__mark-icon")
+
+                    .actions-item
+                        a(class="actions-item__image-link")
+                            img(src="static/images/content/products/prev-2.jpg" alt="product")(class="actions-item__image")   
+                        a(href="").actions-item__body
+                            .actions-item__content
+                                .actions-item__title On-sale products 
+                                p.actions-item__text Loyalty credit is 10% of the value of your order after discounts and credits are applied, excluding shipping charges. This credit is applied as soon as your current order ships, and is valid for up to 60 days from the date of your most recent purchase. 
+                                +divIconSpan("actions-item__icon", "hourglass", "actions-item__icon", "ends In 6 Days 22 Hours ")
+                            .actions-item__mark.mark--icon.mark--percent.mark--red
+                                +icon("percent", "actions-item__mark-icon")
+                    .actions-item
+                        a(class="actions-item__image-link")
+                            img(src="static/images/content/products/prev-2.jpg" alt="product")(class="actions-item__image")   
+                        a(href="").actions-item__body
+                            .actions-item__content
+                                .actions-item__title On-sale products 
+                                p.actions-item__text Loyalty credit is 10% of the value of your order after discounts and credits are applied, excluding shipping charges. This credit is applied as soon as your current order ships, and is valid for up to 60 days from the date of your most recent purchase. 
+                                +divIconSpan("actions-item__icon", "hourglass", "actions-item__icon", "ends In 6 Days 22 Hours ")
+                            .actions-item__mark.mark--icon.mark--percent.mark--green-light
+                                +icon("present", "actions-item__mark-icon ")
+
+            +blockHeaderSmall("actions-block", "title--center", "Old", "", "", "")
+                .actions-block__body
+                    each s in [1, 2, 3, 4, ]
+                        +divLinkImage("old actions-item", "products/prev-1.jpg", "")
+                            +linkContentTitle("old actions-item", "On-sale products", "Loyalty credit is 10% of the value of \n\
+                                                                                your order after discounts and credits are \n\
+                                                                                applied//, excluding shipping charges.\n\
+                                                                                 This credit is applied as soon as your current \n\
+                                                                                order ships//, and is valid for up to 60 days \n\
+                                                                                from the date of your most recent purchase. ",
+                                                                                "ends In 6 Days 22 Hours ", "")
+
+                                +divMarkIcon("old actions-item", "mark--icon mark--present mark--green-light", "present", "actions-item__mark-icon")
+                
+                .actions-block__footer.footer--more
+                    +btn("btn btn--bg-transparent--green show", "Show More", "")
+                    

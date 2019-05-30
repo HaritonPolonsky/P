@@ -1,0 +1,77 @@
+.questions {
+    @extend %FlexAlignItemsCenter;
+    justify-content: space-between;
+    @media screen and (max-width: $phone-size) {
+        flex-direction: column;
+        & > * {
+            margin: 10px 0;
+            &:first-child {
+                margin-top: 0;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    
+}
+
+
+
+.improve {
+    font-size: 14px;
+    @extend %FlexAlignItemsCenter;
+    & > * {
+        &:not(:last-child) {
+            margin-right: 10px;
+        }
+    }
+    &__icon {
+        @include size(10px);
+        fill: $white;
+        &-wrap {
+            @include size(16px);
+            background-color: $text-info;
+            border-radius: 50%;
+            @extend %FlexAlignItemsCenter;
+            justify-content: center;
+        }
+    }
+}
+
+.ask-question {
+    @extend %FlexAlignItemsCenter;
+    & > * {
+        &:not(:last-child) {
+            margin-right: 30px;
+            
+        }
+    }
+    &__list {
+        @extend %FlexAlignItemsCenter;
+        & > * {
+            &:not(:last-child) {
+                margin-right: 20px;
+            }
+        } 
+    }
+    &__link {
+        @extend %FlexAlignItemsCenter;
+        & > * {
+            &:not(:last-child) {
+                margin-right: 10px;
+                @media screen and (max-width: $tablet-size) {
+                margin-right: 10px;
+            }
+            }
+        }
+    }
+    &__icon {
+        @include size(24px);
+        fill:$base-text;
+    }
+    &__text {
+        @extend %displayNoneTablet;
+    }
+
+}

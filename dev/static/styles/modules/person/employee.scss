@@ -1,0 +1,72 @@
+.employees-list {
+    display: flex;
+    flex-wrap: wrap;
+     @media screen and (max-width: $phone-size) {
+        flex-direction: column;
+    }
+    
+    
+}
+
+.employee {
+    display: flex;
+    flex-direction: column;
+    width: calc((100% - 100px) / 6);
+    font-size: 14px;
+    font-family: $medium-font;
+    margin-right: 19px;
+    margin-bottom: 20px;
+    @media screen and (max-width: $tablet-size) {
+            
+           width: calc((100% - 60px) / 4); 
+        }
+         @media screen and (max-width: $phone-size) {
+             width: 100%;
+             margin-bottom: 10px;
+    }
+        
+    &:nth-child(6n+6), &:last-child {
+        margin-right: 0;
+        
+    }
+    &:nth-child(6n+6) {
+        @media screen and (max-width: $tablet-size) {
+           margin-right: 19px; 
+        }
+         @media screen and (max-width: $phone-size) {
+             margin-right: 0;
+    }
+    }
+    
+        &:nth-child(4n+4), &:last-child {
+            @media screen and (max-width: $tablet-size) {
+        margin-right: 0;
+    }
+    }
+/*    &:nth-child(n+6) {
+        border: 1px solid;
+    }*/
+    
+    & > * {
+        margin: 7px 0;
+        align-items: center;
+         @media screen and (max-width: $phone-size) {
+        margin: 2px 0;
+    }
+        &:first-child {
+            margin-top: 0;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &__img {
+        height: 150px;
+        //overflow: hidden;
+        width: auto;
+        border-radius: 4px;
+        
+       
+    }
+    
+}

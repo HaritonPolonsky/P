@@ -1,0 +1,39 @@
+.catalog-nav.header-main__catalog-nav.sandwich--block
+    .catalog-nav__header.selected.sandwich-toggle
+        include ../ui/ui-sandwich
+        span.catalog-nav__title Catalog products
+        span.catalog-nav__title-mobile Catalog
+    .catalog-nav__body.actives 
+        - var list = 0;
+        
+        ul.catalog-nav__list
+            while list < 7
+                
+                - var column = 0;
+                +liDivSpanTextDiv("catalog", "-nav", "Suplements"+list, "", list++, "123")
+                    //.catalog-subnav(data-simplebar)
+                    .catalog-subnav
+                        .catalog-subnav__inner
+                            while column < 2 
+                                div(class="catalog-subnav__col "+column+++"")
+                                    - var block = 0;
+                                    
+                                    while block < 5
+                                        +blockHedearTitle("catalog", "-subnav", "123", "Category"+column+list+block++, "")
+                                            ul.catalog-subnav__list
+                                                - var n = 0;
+                                                while n < 2
+                                                    +listLinkSpanCount("catalog-subnav", "123", "Vitamin"+n++, "")
+
+//                +liDivSpanTextDiv("catalog", "-nav", "Suplements"+n, "", n++)
+//                    +subnav("catalog", "-subnav")
+//                        +blockHedearTitle("catalog", "-subnav", "123", "Category"+n)
+                           
+                                
+                
+                
+            
+          
+            
+            
+                        

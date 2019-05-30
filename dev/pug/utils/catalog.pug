@@ -1,0 +1,66 @@
+mixin tags(tBodyClass, titleClass, title, toggleText,  ...tabs)
+    .tags
+        div(class="tags__body " + tBodyClass)
+            span(class="tags__title tags-row--firts " + titleClass)= title
+            .tag
+                span.tags__text="tags1 tags2 tags3 tags4 tags5 tags6"
+                +countText(33, "")
+            .tag
+                span.tags__text="tags7 "
+                +countText(33, "")
+            //each t in tabs
+            -var c = 0;
+            while c < 20
+                .tag
+                    span.tags__text="tags tags tags "+c++
+                    +countText(123, "")
+            .tag
+                span.tags__text="tags7 "
+                +countText(33, "")
+        span.tags__toggle.tags-row--firts.tags-column--block=toggleText
+        
+mixin catalogAside(classType,className, ...items) 
+    div(class=classType)
+        .aside-nav.acount-nav
+            div(class="aside-nav__body "+className+"__body")
+                each item in items
+                    if(item[0] === navPage) 
+                        - var chosen=className+"-item--chosen";
+                    else
+                        -var chosen="";
+                    +itemHeaderLink(className, chosen,  item[0], item[1])
+                    
+mixin itemHeaderLink(className, classItem, text, link)
+    a(class=className+"-item "+classItem)(href=link) 
+        div(class=className+"-item__header ")
+            span(class=className+"-item--text ")=text
+
+mixin tabsItems(className, mainClass, ...list)
+    ul(class=className+" tabs-list "+mainClass)
+        each val in list
+            -var d = val[1];
+            li(class=className+"__item "+"tabs-list__item "+val[2])(show-tab=d)
+                div(class=className+"__text--wrap")
+                    span(class=className+"__text")=val[0]
+                    if(val[3] !== "")
+                        +countText(val[3], "")
+                        
+    
+
+mixin ta()
+    ul(class="tabs-main"+" tabs-list main-tabs__item")
+        li(class="tabs-main"+"__item "+"tabs-list__item tabs-list__item--active")(show-tab='tab-orders')
+            .tabs-main__text--wrap
+                span(class="tabs-main"+"__text")='Orders'
+                span.count-text 123
+        li(class="tabs-main"+"__item "+"tabs-list__item tabs--aside")(show-tab='tab-items')
+            .tabs-main__text--wrap
+                span(class="tabs-main"+"__text")='Purchased items'
+                span.count-text 123
+
+
+
+mixin pageSort()
+    .page-counter
+        span.page-counter__text Page 
+        span.page-counter__number <b>  1 </b> of 8

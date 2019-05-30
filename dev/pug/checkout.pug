@@ -1,0 +1,11 @@
+extends template/main
+
+block variables
+    - var title = 'Checkout'
+    - var pageClass = 'checkout-page'
+    
+
+block content
+    include pages/checkout/checkout
+    include modules/products/viewed-products
+    include modules/small-blocks/questions

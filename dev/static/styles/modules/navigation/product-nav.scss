@@ -1,0 +1,26 @@
+.product-nav {
+    border-top: 1px solid $main-border-color;
+    &__list {
+        display: flex;
+        & > * {
+            padding: 15px 20px;
+            &:first-child {
+               padding-left: 0;
+            }
+            
+        }
+    }
+        &__link {
+            align-items: baseline;
+            display: flex;
+            border-bottom: 1px dashed $link-color;
+        }
+        &__text {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+                
+        }
+    
+    
+}

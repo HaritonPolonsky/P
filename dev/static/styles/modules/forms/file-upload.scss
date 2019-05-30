@@ -1,0 +1,21 @@
+.file-upload {
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+    input[type="file"] { display: none;  }
+    //&__text { margin-right: 10px; }
+    &__icon {
+        fill: $link-color;
+        height: 16px;
+        width: 12px;
+        &-block {
+           color: $link-color;
+        display: flex;
+        font-size: 14px;
+        font-family: $bold-font; 
+        & > * { 
+            @include notLastChild(10px);
+        } 
+        }
+  }
+}

@@ -1,0 +1,22 @@
++popupId("popup-login")
+    .hide-on-success.popup-main
+        .popup-body
+            +popupHeader("Sign In")
+            .popup__block
+                form.form
+                    .form__body.form__body--blocks
+                        .form-line__block.form-line__block--big
+                            +formLine("mail")
+                                +inputWrap("Email", " form-group--require", "", "", "")
+                                    +inputF("Email", "email", "mail", "")
+
+                            +formLine("password")
+                                +inputWrap("Password", " form-group--require", "link link-green link-underline popup-link", "#forgot-password", "Forgot password")
+                                    +inputFieldIcon('eye', 'password-icon')
+                                        +inputF("Password", "password", "password", "")
+                                  
+                            
+                        .form-line__block.form-line__block--small
+                            +formLineInfo("", "Not have Account?", "#popup-registration", "link link-green link-underline popup-link", "Create an Account") 
+                                span.form-line__info--text By signing in through a third party, I represent that I am 18 years or older, I agree to iHerb's Terms of Use and acknowledge I have read iHerb's Privacy Policy.
+                        +formFooter("Login", " form-group--width-p", "", "")

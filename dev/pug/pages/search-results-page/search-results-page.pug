@@ -1,0 +1,55 @@
+include ../../modules/small-blocks/breadcrumbs
+section.s-search-results.catalog
+    .container
+        .search__form.search__form--m
+            .search__line
+                input(placeholder="Search product" type="search").input-field.input-field--size-s.search__input
+                button(type="submit").search__btn.btn.btn--bg-transparent__icon
+                    +icon('search', 'search__icon')
+        //+sectionHeaderSpan("Search Results for ", "textSectionGreen", "product name", 1234)
+        .section-header.section-header--search
+            h2.title-section Search Results for
+            span.textSectionGreen "producst name"  
+                +countText(0, " section-header--count")
+        .search-results--find
+            +tags("tags__body--column", "tags__title-column", "popular searching", "All searching")
+            .catalog-wrap
+                aside.catalog__aside
+                    //.catalog__aside-mobile--wrap
+                     
+                    .sort-block.catalog__aside-mobile--wrap
+                    
+                        .tabs-wrap--mobile.tabs-include
+                            +tabsItems("catalog-mobile-nav",  "", ["Filter", "tab-filter", "tabs--aside", ""])
+                            //ul.catalog-mobile-nav.tabs-list
+                                li.tabs-list__item.catalog-mobile-nav__item.tabs--aside(show-tab="tab-filter")
+                                    span.catalog-mobile-nav__text Filter
+                            .tabs-content
+                                .tab.tab-filter
+                                    include ../../modules/catalog/filter
+                        .sort
+                            +toggle("sort-item", "Sort By", 'popular', [[['price'], ['big']], [['price'], ['small']], [['name '], ['first → end']], [['name'], ['end → first']],[['popular'], ['']]])
+                            //+toggle("sort-item", "Show", "10", [[1], [2], [3], [4], [5]],"")
+                            //+toggle("sort-item", "Show", 10, [[10], [20], [30]])
+                        +pageSort()
+
+                    .catalog__aside--wrap
+
+                        include ../../modules/catalog/filter
+                main.catalog__main.main-width--max
+                
+                
+                    .sort-block.sort-block--hide
+                        include ../../modules/catalog/sort
+                    .catalog__products-prev
+                        each n in [1, 2, 3, 4, 5, 6]
+                            +prev(n, "quantity")
+                    include ../../modules/small-blocks/pagination
+
+                    section.s-popular-searching
+                        .container--inside
+                            +sectionHeaderSmall("Popular searching in this category", 1234, "", "")
+                            .popular-searching
+                                +prevCategory("list", 1, "", "Supplements", 12)
+                                +prevCategory("list", 1, "", "Supplements", 12)
+                                +prevCategory("list", 1, "", "Supplements", 12)

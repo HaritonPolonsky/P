@@ -1,0 +1,10 @@
+include ../../modules/small-blocks/breadcrumbs
+section.s-categories-list
+    .container
+        +sectionHeader("List categories", 1234)
+        include ../../modules/categories/categories-list
+        include ../../modules/navigation/categories-mobile-nav
+section.s-categories-popular
+    .container       
+        +sectionHeader("Popular categosries")
+        include ../../modules/categories/categories-prev

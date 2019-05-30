@@ -1,0 +1,173 @@
+.bestsellers {
+    
+    &__row {
+        display: flex;
+        @media screen and (max-width: $phone-size) {
+            flex-direction: column;
+        }
+        & > * {
+            &:not(:last-child) {
+                margin-right: 20px;
+                @media screen and (max-width: $phone-size) {
+                    margin-right: 0;
+                    //margin-bottom: 20px;
+                }
+            }
+        }
+
+    }
+    &__col {
+        flex: 1;
+/*        @media screen and (max-width: $phone-size) {
+            margin-bottom: 20px;
+        }*/
+        
+    }
+    &-type {
+        background-color: $white;
+        &__row {
+            display: flex;
+            @media screen and (max-width: $phone-size) {
+        flex-direction: column;
+     
+       
+        //display: block;
+    }
+            &:not(:last-child) {
+                border-bottom: 1px solid $main-bg;
+                
+            }  
+            
+        }
+        &__col {
+            flex: 1;
+            &:not(:last-child) {
+                border-right: 1px solid $main-bg;
+                @media screen and (max-width: $phone-size) {
+        
+        border-right: 0;
+        border-bottom: 1px solid $main-bg;
+       
+        //display: block;
+    }
+            } 
+            &:first-child {
+            @media screen and (max-width: $tablet-size) {
+            display: none;
+        }
+            @media screen and (max-width: $phone-size) {
+                display: flex;
+        //display: block;
+    }
+            }
+            &.bestsellers-type__col {
+                
+            &--wide {
+                flex: 2;
+            }
+        }
+        }
+        .product-prev {
+            padding: 20px 0;
+        &__footer {
+            opacity: 1;
+            padding: 0 20px;
+            .btn {
+                border-radius: 4px;
+                width: auto;
+            }
+        }
+        }
+    }
+}
+.bestseller {
+    background-color: $white;
+    @extend %mainBorderRadius;
+    width: 100%;
+    @extend %FlexAlignItemsCenter;
+    flex-direction: column;
+    justify-content: center;
+    height: 240px;
+    border: $main-border transparent;
+    transition:  $main-transition .3s;
+    padding: 20px;
+    margin-bottom: 20px;
+    @media screen and (max-width: $tablet-size) {
+        height: 190px;
+        padding: 10px;
+    }
+    @media screen and (max-width: $phone-size) {
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        }
+    &:hover {
+        border-color: $main-action-color;
+    }
+    &--big {
+        height: 400px;
+        @media screen and (max-width: $tablet-size) {
+            height: 270px;
+            //margin-bottom: 10px;
+        }
+        @media screen and (max-width: $phone-size) {
+            height: auto;
+            flex-direction: column;
+            //margin-bottom: 20px;
+            
+        }
+        .bestseller {
+            &__img {
+                height: 280px;
+                @media screen and (max-width: $tablet-size) {
+                    height: 180px;
+                }
+                @media screen and (max-width: $phone-size) {
+                    flex: 1;
+                    width: 100%;
+            }
+                
+                img {
+                    max-height: 280px;
+                    @media screen and (max-width: $tablet-size) {
+                        max-height: 180px;
+                    }
+                }
+            }
+        }
+    }
+    &__img {
+        height: 140px;
+        margin-bottom: 10px;
+        @media screen and (max-width: $tablet-size) {
+            height: 80px;
+        }
+        @media screen and (max-width: $phone-size) {
+            flex: 0 0 40%;
+            width: 40%;
+            display: flex;
+            justify-content: center;
+            }
+        img {
+/*            display: flex;
+            align-items: center;
+            justify-content: center;*/
+            max-width: 100%;
+            max-height: 140px;
+            margin-bottom: 10px;
+            @media screen and (max-width: $tablet-size) {
+                max-height: 80px;
+        }
+        }
+    }
+    &__title {
+        //name
+        font-family: $bold-font;
+        line-height: 1.2;
+        font-size: 16px;
+        @media screen and (max-width: $tablet-size) {
+            font-size: 14px;
+        }
+    }
+
+}

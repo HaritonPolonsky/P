@@ -1,0 +1,37 @@
+include ../../modules/small-blocks/breadcrumbs
+section.s-review-write
+    .container
+        +sectionHeader("Product name", "", "")
+            
+        .review-write.review-write-product
+            .hide-on-success
+                .review-write__block
+                    .subtitle-wrap
+                        span.subtitle-size--s Product was  <b>  27 may 2018 </b>
+                .review-write__block
+                    .product-rating
+                        .stars
+                            .star.star--full(data-star="1")
+                            .star.star--full(data-star="2")
+                            .star.star--full(data-star="3")
+                            .star
+                                .star--half(data-star="4")
+                            .star(data-star="5")  
+                .review-write__block
+                    form.form
+                        .form__body
+                            +formLine("comment")
+                                +inputWrap("Comment", " form-group--require", "", "", "")
+                                    +textArea("Hello ", "commet", "", "")
+                            +formLine("file")
+                                +uploadFile()
+                        +formFooter("Add", " form-group--width-m", "", "privat", "")
+            .show-on-success
+                .review-write__block
+                    .subtitle-wrap
+                        span.subtitle-size--s Review will be check and if ok add
+
+
+        
+            
+        

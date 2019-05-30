@@ -1,0 +1,22 @@
+section.s-breadcrumbs
+    .container
+        ul.breadcrumbs
+        
+        
+            li.breadcrumbs__item
+                a(href="index.html").breadcrumbs__home
+                    +icon('home', 'breadcrumbs__icon')
+            - var bread = 0;
+                while bread < 5
+                    li.breadcrumbs__item
+                        a(href="").breadcrumbs__link.breadcrumbs-nav__toggle.toggle-click="Catal"+bread++
+                        .breadcrumbs-tooltip.tooltip
+                            span.breadcrumbs-tooltip__text Vitamins and minerals for everyone
+                        ul.breadcrumbs__nav.toggle-list.toggle-list__border--yellow
+                            - var n = 0;
+                            while n < 5
+                                +listLinkSpanCount("breadcrumbs__nav-t toggle", "123", "Product"+bread+n++, "")
+                li.breadcrumbs__item
+                    span.breadcrumbs__label Catalog
+                                                    
+        

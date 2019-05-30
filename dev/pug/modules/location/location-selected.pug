@@ -1,0 +1,11 @@
+.location-selected.select-wrap
+    .location-selected__close.select__close
+        +icon('close', 'location-selected__close-icon .select__close-icon')
+    .location-selected__header.select-header
+        input(placeholder="delivery region").widthFill.input-field.input-field--size-s
+    .location-selected__body.select-body
+        
+        ul.location-selected__list.dropdown.select-list
+            each val in ['region1','region2','region3','region4','region5','region6','region7', 'region8', 'region9','region10','region11','region12','region13']
+                li(class="location-selected__item select-item")= val
+    

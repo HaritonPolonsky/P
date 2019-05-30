@@ -1,0 +1,10 @@
+extends template/main
+
+block variables
+    - var title = 'Action'
+    - var pageClass = 'action-page'
+
+block content
+    include pages/action/action
+    include modules/products/viewed-products
+    include modules/small-blocks/questions

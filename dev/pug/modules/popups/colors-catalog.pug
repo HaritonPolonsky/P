@@ -1,0 +1,35 @@
+.popup.popup--big.mfp-hide#popup-colors-catalog
+    .popup-body
+        +popupHeader("Colors catalog")
+        .colors-catalog.popup-content
+            .popup__block.colors-catalog__block
+                .colors-catalog__item.colors-catalog__input
+                    input(placeholder="Search color" type="text").input-field.input-text.input-field--width-s.input-field--size-s
+            .popup__block.colors-catalog__block
+                .colors-catalog__item.colors-catalog__chechbox.checkbox-add-text--bold
+                    +checkbox("Choose all ", "", "", "")
+                .colors-catalog__item
+                    p.popup__subtitle Catalog colors
+                each color in ['red', 'blue', 'pink', 'orange', 'violet']
+                    .colors-catalog__item.colors-catalog__chechbox.checkbox-add-text--bold
+                        +checkbox( "All "+color, "", "", "")
+                        ul.filter-list.colors-catalog-list
+                            - var d  = 0
+                            while d < 20
+                                li.filter-list__item.filter-list__item--tooltip
+                                                                    
+                                    +checkboxP("color"+d++, "", "color--s filter-tooltip--main", color)
+                                        .filter-list-tooltip.tooltip
+                                            span.filter-list-tooltip__title.color-title=color
+                                            span.filter-list-tooltip__value.color-value 67$
+                                            +checkboxColor(color, "color--l")
+                                        
+        .colors-catalog__footer.popup-footer
+            span.colors-catalog__count Selected  <b> 30 </b> colors
+            button.btn Add filter
+//                                li.filter-list__item.filter-list__item--tooltip
+//                                    +checkboxP("color"+d++, "", "color--m filter-tooltip--main", color)
+//                                        .filter-list-tooltip.tooltip
+//                                            span.filter-list-tooltip__title=color
+//                                            span.filter-list-tooltip__name Pink
+//                                            +checkboxColor(color, "color--l")

@@ -1,0 +1,127 @@
+section {
+    &.s-breadcrumbs {
+        padding-bottom: 0px;
+        & + section {
+        padding-top: 20px;
+    }
+    }
+}
+.s-breadcrumbs {
+    @media screen and (max-width: $tablet-size) {
+         padding-top: 20px;
+        
+        }
+        @media screen and (max-width: $phone-size) {
+         padding-top: 10px;
+        
+        }
+/*    & + section {
+        padding-top: 10px;
+    }*/
+    
+}
+.breadcrumbs {
+    align-items: center;
+    display: flex;
+    font-size: 12px;
+    
+    //white-space: nowrap;
+    flex-wrap: wrap;
+    &__icon {
+        @include size(17px);
+        vertical-align: top;
+    }
+    
+    &__item {
+        display: flex;
+        align-items: center;
+        //white-space: nowrap;
+        flex-wrap: wrap;
+        &:hover {
+            .breadcrumbs-tooltip {
+                @media screen and (min-width: $phone-size) {
+                    display: block;
+                }
+                
+            }
+        }
+        
+        &:after {
+            content: '/';
+            display: block;
+            margin: 0 10px;
+        }
+        &:last-child {
+            &:after {
+                display: none;
+            }
+            .breadcrumbs__link {
+                &:before {
+                    display: none;
+                }
+            }
+        }
+        &.toggle--show {
+            .toggle {
+                @media screen and (min-width: $phone-size) {
+                    display: block;
+                }
+            }
+            
+        }
+        
+    }
+    &__link {
+        cursor: pointer;
+        position: relative;
+        padding-right: 20px;
+        @media screen and (max-width: $phone-size) {
+            padding-right: 0px;
+        }
+        &:before{
+            @include triangleBottom(0px, 0, 5px, #333333);
+            display: block;
+            top: 4px;
+            @media screen and (max-width: $phone-size) {
+                display: none;
+            }
+            
+        }
+        &:hover {
+            color: $breadcrumbs-link-hover;
+            &:before {
+                @include triangleBottom(0px, 0, 5px, $breadcrumbs-link-hover);
+            }
+            
+        }
+    }
+    &-tooltip {
+        //background-color: $white;
+        //border-radius: 4px;
+        //box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        padding: 10px;
+        font-size: 12px;
+        width: 230px;
+        display: none;
+        //position: absolute;
+        top: 130%;
+        &__text {
+            white-space: normal;
+        }
+    }
+    &__nav {
+        display: none;
+        top: 100%;
+        line-height: 20px;
+        //z-index: 1;
+        //border: 2px solid $main-action-color;
+        .toggle__link {
+            //font-size: 14px;
+            font-family: $bold-font;
+            
+        }
+    }
+    
+}
+

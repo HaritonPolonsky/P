@@ -1,0 +1,35 @@
+include ../../modules/small-blocks/breadcrumbs
+section.s-account.catalog
+    .container
+        +sectionHeader("Account")
+        .catalog-wrap
+            aside.catalog__aside
+                +catalogAside("catalog__aside-mobile--wrap tabs-wrap--mobile", "select-nav", ["Account", "account.html"], ["Orders" , "orders.html" ],["Settings", "settings.html"])
+                +catalogAside("catalog__aside--wrap", "aside-nav", ["Account","account.html"], ["Orders" , "orders.html" ],["Settings", "settings.html"])
+            .s-main-tabs.s-wrap.section-bg--white
+                .main-tabs
+                    +tabsItems("tabs-main", "main-tabs__item", ["Orders", "tab-orders", "tabs-list__item--active", 123], ["Purchased items", "tab-items", "", 123])
+                    //ul(class="tabs-main"+" tabs-list main-tabs__item")
+                        li(class="tabs-main"+"__item "+"tabs-list__item tabs--aside tabs-list__item--active")(show-tab='tab-orders')
+                            .tabs-main__text--wrap
+                                span(class="tabs-main"+"__text")='Orders'
+                                span.count-text 123
+                        li(class="tabs-main"+"__item "+"tabs-list__item tabs--aside")(show-tab='tab-items')
+                            .tabs-main__text--wrap
+                                span(class="tabs-main"+"__text")='Purchased items'
+                                span.count-text 123
+                    
+                    .sort-block.main-tabs__item
+                        
+                        +toggle("sort-item", "Sort By", 'popular', [[['price'], ['big']], [['price'], ['small']], [['name '], ['first → end']], [['name'], ['end → first']],[['popular'], ['']]])
+                            //+toggle("sort-item", "Show", "10", [[1], [2], [3], [4], [5]],"")
+                        +pageSort()    
+                .tabs-content
+                    .tab.tab-orders.tab--active
+                        include orders-tab-content
+                                                    
+
+                    
+                    .tab.tab-items 
+                        include ../items/items-active
+                

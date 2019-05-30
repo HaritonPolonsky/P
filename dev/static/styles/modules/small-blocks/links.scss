@@ -1,0 +1,47 @@
+.link {
+    color: $base-text;
+    font-size: 14px;
+    font-family: $medium-font;
+    &:hover {
+            color: $link-color-hover;
+        }
+        &:visited {
+            color: $link-color-visited;
+        }
+        
+    &-white, &-green, &-green-light, &-yellow, &-underline {
+            font-family: $medium-font;
+        }
+    &-white{
+        color: $white;
+        
+    }
+    &-green {
+        color: $link-color;
+    }
+    
+    &-green, &-green-light {
+        &:hover {
+            color: $link-color-hover;
+        }
+    }
+     &-green-light {
+            
+            color: $link-color-light;
+        }
+    &-yellow {
+        color: $main-action-color;
+        
+    }
+    &-underline {
+        text-decoration: underline;
+        
+    }
+    &-big {
+        display: flex;
+        justify-content: space-between;
+        & > * {
+            @include notLastChild(10px)
+        }
+    }
+}

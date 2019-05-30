@@ -1,0 +1,35 @@
+.section.section-bg--white
+    form.form(data-next="2")
+        .form__body.form__body--blocks
+            .form-line__block.form-line__block--big
+                span.form-line__block--title Section1
+                +formLine("name")
+                    +inputWrap("Name", " form-group--require", "", "", "")
+                        +inputF("Name", "text", "name", "")
+
+
+                +formLine("fName")
+                    +inputWrap("FName", " form-group--require", "", "", "")
+                        +inputF("FName", "text", "Fname", "")
+
+
+                +formLine("mail")
+                    +inputWrap("Email", " form-group--require", "", "", "")
+                        +inputF("Email", "email", "mail", "")
+
+                +formLine("phone")
+                    +inputWrap("Telephone", "  form-group--require", "", "", "")
+                        +inputF("+791234567890", "tel", "phone", "")
+
+            .form-line__block.form-line__block--big
+                span.form-line__block--title Address
+                +formLine("address")
+                    +inputWrap("Address", " form-group--require", "", "", "")
+                        +inputF("Address", "text", "Address", "")
+                .form-footer
+                    +formLine("")
+                        div(class="form-group form-line__input--btn form-group--width-p")
+                            input(type="submit" value="Next")(class="btn checkout-step")
+                        .form-line
+                            p(class= "form-info "+pClass) Asking a question you agree to <a href="" class="form-info__link "> the privacy policy</a>
+                

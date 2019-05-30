@@ -1,0 +1,38 @@
+include ../../modules/small-blocks/breadcrumbs
+section.s-checkout
+    .container
+        +sectionHeader("Checkout", "", "")
+        .checkout
+            .subtitle-wrap
+                span.subtitle-size--s Price <b> 7000$ </b>
+                a(href="").link.link-green.link-underline Cart
+            
+            include ../../modules/navigation/checkout-nav
+            .ckeckout-body
+                .tabs-content
+                    .tab.tab-checkout-nav-1.tab--active
+                        .s-main-tabs.s-wrap.section-bg--white
+                            .main-tabs
+                                +tabsItems("tabs-main", "main-tabs__item", ["Contacts", "tab-contacts", "tabs-list__item--active"])     
+                            .tabs-contacts
+                                .tab.tab--active
+                                    include checkout-contacts
+                    .tab.tab-checkout-nav-2
+                        .ckeckout-tab__wrap
+                            .s-main-tabs.s-wrap.section-bg--white
+                                .main-tabs
+                                    +tabsItems("tabs-main", "main-tabs__item", ["Delivery", "tab-delivery", "tabs-list__item--active"])     
+                                .tabs-delivery
+                                    .tab.tab--active
+                                        include ../../modules/small-blocks/delivery
+                                            button.btn.step-button(data-next="3")
+                                                span Next
+                    .tab.tab-checkout-nav-3
+                        .s-main-tabs.s-wrap.section-bg--white
+                                .main-tabs
+                                    +tabsItems("tabs-main", "main-tabs__item", ["Pay", "tab-pay", "tabs-list__item--active"])     
+                                .tabs-pay
+                                    .tab.tab--active
+                                        include checkout-pay
+            
+        

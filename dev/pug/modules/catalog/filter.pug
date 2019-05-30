@@ -1,0 +1,40 @@
+.filter.aside-nav
+    .filter__header.aside-nav__header
+        span.filter__title.aside-nav__title Filter
+    .filter__body.aside-nav__body
+        .filter-tooltip.tooltip.aside-nav__tooltip
+            span.filter-tooltip__text Find <b> 555 items</b>
+            a(href="#").filter-tooltip__link.link-green.link-underline See
+        +itemHeaderTitleBody("aside-nav", "Material", "dropdownArr", "filter")
+            +filterRange("price")
+            
+        
+        +itemHeaderTitleBody("aside-nav", "Price", "dropdownArr", "filter")
+            ul.filter-list
+                each b in [1, 2, 3, 4, 5, 6]
+                    +checkboxList("price"+b, b*100, "", "")
+                li.show Show all
+                
+        +itemHeaderTitleBody("aside-nav", "Brands", "dropdownArr", "filter")
+            ul.filter-list
+                each b in [1, 2, 3, 4, 5, 6]
+                    +checkboxList("brand"+b, b*200, "color--s", "pink")
+                +listCountLinkClass("#popup-colors-catalog", "All items", "filter-list-show", "333", "filter-list-show__item__link popup-link show-item--link")
+        +itemHeaderTitleBody("aside-nav", "Certification", "dropdownArr", "filter")
+            ul.filter-list
+                each b in [1, 2, 3, 4, 5, 6]
+                    +checkboxList("certif"+b, b*100, "", "")
+    .filter__footer.aside-nav__footer
+        +btn("", "Filter", "123")
+        +btn("btn btn--bg-transparent--green", "Clean", "")
+   
+//  +itemHeaderTitleBody("filter", "Specifics")
+//            .filter-slider
+//                .filter-slider__values
+//                    input.input-field.input-field--size-s
+//                        .filter-slider__value
+//                        .filter-slider__value--from
+//                    .filter-slider__values-line
+//                    input.input-field.input-field--size-s
+//                        .filter-slider__value.filter-slider__value--to
+//                .filter-slider__line(data-range-type="mm")
